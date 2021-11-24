@@ -1,0 +1,4 @@
+Opacar foto de login
+Crear manual de uso
+Poner botón que lleve a los reportes
+Poner las historias de usuario en el jira
