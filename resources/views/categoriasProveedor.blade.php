@@ -1,6 +1,6 @@
 @extends('layoutAdmin')
 
-@section('titulo','Categorias Proveedor')
+@section('titulo','Categorías Proveedor')
 
 @section('contenido')
 	<div class="section-title text-center">

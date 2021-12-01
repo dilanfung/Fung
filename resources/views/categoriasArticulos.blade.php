@@ -1,6 +1,6 @@
 @extends('layoutAdmin')
 
-@section('titulo','Categorias Articulos')
+@section('titulo','Categorías Articulos')
 
 @section('contenido')
 

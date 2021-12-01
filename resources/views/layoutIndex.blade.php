@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>@yield('titulo') - FUNG Servicio Automotriz</title>
+		<title>FUNG Servicio Automotriz</title>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -32,55 +32,6 @@
 		</div><!-- end loader -->
 		<!-- END LOADER -->
 		
-		<!-- Navigation -->
-		<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-			<div class="container">
-				<a class="navbar-brand js-scroll-trigger" href="#page-top">
-					<img class="img-fluid" src="{{URL::asset('images/LogoFung.png')}}" alt="" />
-				</a>
-				<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-					<i class="fa fa-bars"></i>
-				</button>
-				<div class="collapse navbar-collapse" id="navbarResponsive">
-					<ul class="navbar-nav text-uppercase ml-auto">
-						<li class="nav-item">
-							<a class="nav-link js-scroll-trigger" href="indexAdmin">Inicio</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link js-scroll-trigger" href="CitasAdmin">Citas</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link js-scroll-trigger" href="inventarioAdmin">Inventario</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link js-scroll-trigger" href="serviciosAdmin">Servicios</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link js-scroll-trigger" href="feedbackAdmin">Feedback</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link js-scroll-trigger" href="clientesAdmin">Clientes</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link js-scroll-trigger" href="perfilAdmin">Perfil</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link js-scroll-trigger" href="index">Cerrar Sesión</a>
-						</li>
-					</ul>
-			  	</div>
-			</div>
-		</nav>
-		
-		<section id="home" class="main-banner small-main-banner parallaxie" >
-			<div class="heading small-heading">
-				<h1></h1>
-				<h3 class="cd-headline clip is-full-width">
-					<span>Bienvenido: "Admin"</span>
-				</h3>
-			</div>
-		</section>
-
 		@yield('contenido')
 
 		<br>
@@ -88,12 +39,6 @@
 			<div class="container">
 				<div class="footer-distributed">
 					<div class="footer-center">
-						<p class="footer-links">
-							<!--<a href="#">Inicio</a>
-							<a href="#services">Servicios</a>
-							<a href="#about">Sobre Nosotros</a>
-							<a href="#contact">Contacto</a>-->
-						</p>
 						<p class="footer-company-name">Todos los derechos reservados &copy; 2021 FUNG Servicio Automotriz</p>
 					</div>
 				</div>

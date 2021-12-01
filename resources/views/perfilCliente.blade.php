@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layoutCliente')
 
 @section('titulo','Usuario')
 
