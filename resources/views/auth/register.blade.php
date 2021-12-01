@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('titulo', 'Registrar usuario')
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -25,6 +27,8 @@
                             </div>
                         </div>
 
+                        <br>
+
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Correo') }}</label>
 
@@ -38,6 +42,8 @@
                                 @enderror
                             </div>
                         </div>
+                        
+                        <br>
 
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Contraseña') }}</label>
@@ -53,6 +59,8 @@
                             </div>
                         </div>
 
+                        <br>
+
                         <div class="form-group row">
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirmar Contraseña') }}</label>
 
@@ -60,6 +68,8 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
+
+                        <br>
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
