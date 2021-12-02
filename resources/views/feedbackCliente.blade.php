@@ -3,42 +3,48 @@
 @section('titulo', 'Feedback')
 
 @section('contenido')
-    <div id="contact" class="section db">
-      <div class="container">
-        <div class="section-title text-center">
-          <h3>Envío de retroalimentación</h3>
-          <p>En este apartado el cliente podra enviar una recomendación o retroalimentación tanto como para el lubricentro como para el sistema.</p>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-            <div class="contact_form">
-              <div id="message"></div>
-              <form id="contactForm" name="sentMessage" novalidate="novalidate">
-                <div class="row">
-                  <div class="container">
-                    <div class="form-group">
-                      <label for="comment">Tipo de retroalimentación</label><br>
-                      <select name="select" id="select" class="form-select">
-                        <option value="app">Retroalimentación de la aplicación</option>
-                      </select>
-                    </div>
-                    <div class="form-group">
-                      <label for="comment">Mensaje</label>
-                      <textarea class="form-control" rows="5" id="comment"></textarea>
-                    </div>
+  <div id="contact" class="section db">
+    <div class="container">
+      <div class="section-title text-center">
+        <h3>Envío de retroalimentación</h3>
+        <p>En este apartado el cliente podra enviar una recomendación o retroalimentación tanto como para el lubricentro como para el sistema.</p>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="contact_form">
+            <div class="row">
+              <div class="container">
+                <form method="POST" action="{{ url('/feedbackCliente') }}" id="add-event">
+                  @csrf
+
+                  <div class="form-group">
+                    <label for="categoria_rtr">Tipo de retroalimentación</label><br>
+                    <select class="form-control" id="categoria_rtr" name="categoria_rtr">
+                      @forelse($categorias as $categoria)
+                        <option value="{{ $categoria->id }}">{{ $categoria->nombre }}</option>
+                      @empty
+                        No hay carros disponibles.
+                      @endforelse
+                    </select>
                   </div>
-                  <div class="clearfix"></div>
-								  <div class="col-lg-12 text-center">
-									  <div id="success"></div>
-									  <button id="Enviarretroalimentaciónbtn" class="sim-btn hvr-bounce-to-top" type="submit">Enviar retroalimentación</button>
-								  </div>
-							  </div>
-						  </form>
+                  
+                  <div class="form-group">
+                    <label for="mensaje">Mensaje</label>
+                    <textarea class="form-control" rows="5" id="mensaje" name="mensaje" maxlength="45"></textarea>
+                  </div>
+
+                  <div class="col-lg-12 text-center">
+                    <button id="enviar" class="sim-btn hvr-bounce-to-top" type="submit">Enviar retroalimentación</button>
+                  </div>
+                  
+                </form>
+              </div>
             </div>
-          </div><!-- end col -->
-        </div><!-- end row -->
-      </div><!-- end container -->
-    </div><!-- end section -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <div id="contact" class="section db">
     <div class="container">
@@ -47,7 +53,7 @@
         <p>¿Está disfrutando de nuestros servicios? Lo invitamos a llenar nuestra encuesta de satisfacción</p>
         <br>
         <a href="encuestaSatisfaccionCliente.blade.php" class="sim-btn hvr-bounce-to-top">Hacer encuesta</a>
-      </div><!-- end title -->
+      </div>
     </div>
   </div>
 @endsection

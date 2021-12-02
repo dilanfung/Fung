@@ -34,10 +34,9 @@ class citas_admin_controller extends Controller
     {
         DB::select('CALL `fungdb`.`crear_cita`("'.
         $request->input('Fecha').' '.$request->input('Hora').'", '.
-        $request->input('Usuario').','.
+        $request->input('Usuario').', '.
         $request->input('Vehiculo').');');
         return redirect()->route('CitasAdmin.index');
-        //return response()->json($request);
     }
 
     /**
@@ -50,12 +49,11 @@ class citas_admin_controller extends Controller
     public function update(Request $request, $id)
     {
         DB::select('CALL `fungdb`.`modificar_cita`('.
-        $id.',"'.
-        $request->input('Fecha').' '.$request->input('Hora').':00", '.
-        $request->input('Usuario').','.
+        $id.', '.
+        '"'.$request->input('Fecha').' '.$request->input('Hora').':00'.'", '.
+        $request->input('Usuario').', '.
         $request->input('Vehiculo').');');
         return redirect()->route('CitasAdmin.index');
-        //return response()->json($request);
     }
 
     /**
