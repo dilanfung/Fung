@@ -25,6 +25,7 @@ Route::resource('serviciosCliente', 'serviciosClienteController');
 Route::resource('categoriasProveedor', 'categoriasProveedorController');
 Route::resource('categoriasArticulos', 'categoriasArticulosController');
 Route::resource('feedbackAdmin', 'feedbackAdminController');
+Route::resource('encuesta', 'encuestaController');
 Route::resource('feedbackCliente', 'feedbackClienteController');
 Route::resource('articulos', 'ArticuloController') ->middleware('soloadmin');
 
