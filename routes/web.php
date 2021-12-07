@@ -11,23 +11,26 @@ Route::view('/indexCliente', 'indexCliente')->name('indexCliente');
 
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('/user', UserController::class);
-Route::resource('CitasAdmin', 'citas_admin_controller');
-Route::resource('CitasCliente', 'citas_cliente_controller');
-Route::resource('perfilAdmin', 'perfilAdminController');
-Route::resource('perfilCliente', 'perfilClienteController');
+Route::resource('CitasAdmin', 'citas_admin_controller')->middleware('soloadmin'); 
+Route::resource('CitasCliente', 'citas_cliente_controller')->middleware('solouser');
+Route::resource('perfilAdmin', 'perfilAdminController')->middleware('soloadmin');
+Route::resource('perfilCliente', 'perfilClienteController')->middleware('solouser');
 Route::resource('perfilAdminVehiculo', 'perfilAdminVehiculoController')->middleware('soloadmin'); 
-Route::resource('perfilClienteVehiculo', 'perfilClienteVehiculoController');
-Route::resource('clientesAdmin', 'clientesAdminController');
-Route::resource('crearProveedorAdmin', 'crearProveedorAdminController');
-Route::resource('serviciosAdmin', 'serv_adminController');
-Route::resource('promocionesAdmin', 'servAdminController');
-Route::resource('serviciosCliente', 'serviciosClienteController');
-Route::resource('categoriasProveedor', 'categoriasProveedorController');
-Route::resource('categoriasArticulos', 'categoriasArticulosController');
-Route::resource('feedbackAdmin', 'feedbackAdminController');
-Route::resource('encuesta', 'encuestaController');
-Route::resource('feedbackCliente', 'feedbackClienteController');
+Route::resource('perfilClienteVehiculo', 'perfilClienteVehiculoController')->middleware('solouser');
+Route::resource('clientesAdmin', 'clientesAdminController')->middleware('soloadmin');
+Route::resource('crearProveedorAdmin', 'crearProveedorAdminController')->middleware('soloadmin');
+Route::resource('serviciosAdmin', 'serv_adminController')->middleware('soloadmin');
+Route::resource('promocionesAdmin', 'servAdminController')->middleware('soloadmin');
+Route::resource('serviciosCliente', 'serviciosClienteController')->middleware('solouser');
+Route::resource('categoriasProveedor', 'categoriasProveedorController')->middleware('soloadmin');
+Route::resource('categoriasArticulos', 'categoriasArticulosController')->middleware('soloadmin');
+Route::resource('feedbackAdmin', 'feedbackAdminController')->middleware('soloadmin');
+Route::resource('encuesta', 'encuestaController')->middleware('solouser');
+Route::resource('feedbackCliente', 'feedbackClienteController')->middleware('solouser');
 Route::resource('articulos', 'ArticuloController') ->middleware('soloadmin');
+
+
+
 
 /*use App\Http\Controllers\clientesAdminController;
 |--------------------------------------------------------------------------
