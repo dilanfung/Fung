@@ -77,6 +77,20 @@
 
 		@yield('contenido')
 
+		<div id="contact" class="section db text-align-center">
+			<div class="section-title text-center">
+				<h3>Contacto</h3>
+			</div>
+			<div class="container">
+				<a href="https://www.facebook.com/FUNGHONDA" class="social-media fa-facebook"></a>
+				<a href="https://wa.me/50683852416" class="social-media fa-whatsapp"></a>
+			</div>
+		</div>
+
+		<div class="text-align-center">
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.485201598103!2d-84.04744138466826!3d9.976719376170735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0e5c25aed3e9f%3A0xc13bf92e0a73fe4a!2sFUNG%20Servicio%20Automotriz!5e0!3m2!1sen!2scr!4v1628439058270!5m2!1sen!2scr" width="1000" height="500" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+		</div>
+
 		<br>
 		<div class="copyrights">
 			<div class="container">
@@ -93,8 +107,6 @@
 				</div>
 			</div>
 		</div>
-
-		<a href="#" id="scroll-to-top" class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>	
 		
 		<!-- JS -->
 		<script src="{{URL::asset('js/all.js')}}"></script>
