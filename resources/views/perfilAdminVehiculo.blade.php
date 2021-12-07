@@ -3,14 +3,7 @@
 @section('titulo','Perfil Admin Vehículo')
 
 @section('contenido')
-		<section id="home" class="main-banner small-main-banner parallaxie" style="background: url('../../public/uploads/mecanica.jpg')">
-			<div class="heading small-heading">
-				<h1></h1>
-				<h3 class="cd-headline clip is-full-width">
-					<span>Bienvenido: "Admin"</span>
-				</h3>
-			</div>
-		</section>
+	
 				
 		<div class="section-title text-center">
 			<br><h3>Vehiculos</h3>	
