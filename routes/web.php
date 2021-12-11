@@ -28,6 +28,7 @@ Route::resource('feedbackAdmin', 'feedbackAdminController')->middleware('soloadm
 Route::resource('encuesta', 'encuestaController')->middleware('solouser');
 Route::resource('feedbackCliente', 'feedbackClienteController')->middleware('solouser');
 Route::resource('articulos', 'ArticuloController') ->middleware('soloadmin');
+Route::resource('retroalimentacion', 'retroalimentacionController') ->middleware('soloadmin');;
 
 
 

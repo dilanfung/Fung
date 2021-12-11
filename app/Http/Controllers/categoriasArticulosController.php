@@ -35,7 +35,7 @@ class categoriasArticulosController extends Controller{
     {
  
         $categoriasArticulos = DB::select('CALL `fungdb`.`mostrar_todas_categorias_articulos`();');
-        return view('categoriasArticulos', [ "categoriasArticulos" => $categoriasArticulos ]);
+        return view('categoriasArticulos', [ "categoriasArticulos" => $categoriasArticulos,"categoriasArticulo" => $categoriasArticulos ]);
     }
 
     public function store(Request $request)

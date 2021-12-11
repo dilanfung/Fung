@@ -23,7 +23,7 @@
 					<td>{{$categoriasProveedorItem->id}}</td>
 					<td>{{$categoriasProveedorItem->nombre}}</td>
 					<td>
-						<button data-toggle="modal" data-target="#modalEditarCategoriaProveedor" 
+						<button data-toggle="modal" data-target="#modalEditarCategoriaProveedor{{ $categoriasProveedorItem->id }}" 
 						class="button--save datatable-button fa-edit"></button>
 					</td>
 				</tr>
@@ -33,30 +33,34 @@
 		</tbody>
 	</table>
 
-	<div id="modalEditarCategoriaProveedor" class="modal modal-top fade">
-		<div class="modal-dialog modal-dialog-centered">
-			<div class="modal-content">
-				<form id="add-event" method="POST" action="{{ url('/categoriasProveedor/'.$categoriasProveedorItem->id) }}">
-					@csrf
-					{{ @method_field('PATCH') }}
-					<div class="modal-body">
-						<div class="form-group">
-							<label>Identificador</label>
-							<input type="text" class="form-control" name="Id">
+	@forelse ($categoriasProveedor2 as $categoriasProveedorItem2)
+		<div id="modalEditarCategoriaProveedor{{ $categoriasProveedorItem2->id }}" class="modal modal-top fade">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<form id="add-event" method="POST" action="{{ url('/categoriasProveedor/'.$categoriasProveedorItem2->id) }}">
+						@csrf
+						{{ @method_field('PATCH') }}
+						<div class="modal-body">
+							<div class="form-group">
+								<label>Identificador</label>
+								<input type="text" class="form-control" name="Id" value="{{ $categoriasProveedorItem2->id }}" readonly>
+							</div>
+							<div class="form-group">
+								<label>Nombre</label>
+								<input type="text" class="form-control" name="Nombre" value="{{ $categoriasProveedorItem2->nombre }}">
+							</div>
+						<div class="modal-footer">
+							<button type="submit" class="btn btn-primary">Guardar</button>
+							<button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
 						</div>
-						<div class="form-group">
-							<label>Nombre</label>
-							<input type="text" class="form-control" name="Nombre">
 						</div>
-					<div class="modal-footer">
-						<button type="submit" class="btn btn-primary">Guardar</button>
-						<button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
-					</div>
-					</div>
-				</form>
+					</form>
+				</div>
 			</div>
 		</div>
-	</div>
+	@empty
+		No hay datos que mostrar.			
+	@endforelse
 @endsection
 
 

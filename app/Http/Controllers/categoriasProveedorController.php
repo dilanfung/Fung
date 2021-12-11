@@ -35,7 +35,7 @@ class categoriasProveedorController extends Controller{
     {
  
         $categoriasProveedor = DB::select('CALL `fungdb`.`mostrar_todas_categorias`();');
-        return view('categoriasProveedor', [ "categoriasProveedor" => $categoriasProveedor ]);
+        return view('categoriasProveedor', [ "categoriasProveedor" => $categoriasProveedor,"categoriasProveedor2" => $categoriasProveedor ]);
     }
     
     public function update(Request $request, $id)

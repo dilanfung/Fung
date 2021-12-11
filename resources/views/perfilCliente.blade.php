@@ -72,7 +72,7 @@
 						<td>{{$clientes->apellidos}}</td>
 						<td>{{$clientes->correo}}</td>
 						<td>
-							<button data-toggle="modal" data-target="#modalEditarCliente" 
+							<button data-toggle="modal" data-target="#modalEditarCliente{{ $clientes->id }}" 
 							class="button--save datatable-button fa-edit"></button>
 						</td>
 					</tr>
@@ -82,7 +82,7 @@
 			</tbody>
 		</table>
 
-		<div id="modalEditarCliente" class="modal modal-top fade">
+		<div id="modalEditarCliente{{ $clientes->id }}" class="modal modal-top fade">
 			<div class="modal-dialog modal-dialog-centered">
 				<div class="modal-content">
 					<form id="add-event" method="POST" action="{{ url('/perfilCliente/'.$clientes->id) }}">
@@ -91,19 +91,19 @@
 						<div class="modal-body">
 							<div class="form-group">
 								<label>Identificador</label>
-								<input type="text" class="form-control" name="Id">
+								<input type="text" class="form-control" name="Id" value="{{$clientes->id}}" readonly>
 							</div>
 							<div class="form-group">
 								<label>Nombre</label>
-								<input type="text" class="form-control" name="Nombre">
+								<input type="text" class="form-control" name="Nombre" value="{{$clientes->nombre}}">
 							</div>
 							<div class="form-group">
 								<label>Apellidos</label>
-								<input type="text" class="form-control" name="Apellidos">
+								<input type="text" class="form-control" name="Apellidos"value="{{$clientes->apellidos}}">
 							</div>
 							<div class="form-group">
 								<label>Correo</label>
-								<input type="text" class="form-control" name="Correo">
+								<input type="text" class="form-control" name="Correo"value="{{$clientes->correo}}">
 							</div>
 							<div class="form-group">
 								<label>Contraseña</label>

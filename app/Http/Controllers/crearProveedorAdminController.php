@@ -20,7 +20,7 @@ class crearProveedorAdminController extends Controller
         //->paginate(20); //resolver lo de la paginacion
         $proveedor = DB::select('CALL `fungdb`.`mostrar_todos_proveedores`();');
         $categorias = DB::select('CALL `fungdb`.`mostrar_todas_categorias`();');
-        return view('crearProveedorAdmin', [ "proveedor" => $proveedor,"categorias" => $categorias  ]);
+        return view('crearProveedorAdmin', [ "proveedor" => $proveedor,"proveedor2" => $proveedor,"categorias" => $categorias,"categoria" => $categorias ]);
     }
 
     /**
