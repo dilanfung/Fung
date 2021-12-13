@@ -6,12 +6,18 @@ use App\http\Controllers\perfilAdminVehiculoController;
 Auth::routes();
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::view('/', 'index')->name('index');
 Route::view('/indexAdmin', 'indexAdmin')->name('indexAdmin');
 Route::view('/indexCliente', 'indexCliente')->name('indexCliente');
 
 Route::resource('/user', UserController::class);
+=======
+Route::view('/', 'index')->name('index');
+Route::view('/indexAdmin', 'indexAdmin')->name('indexAdmin');
+Route::view('/indexCliente', 'indexCliente')->name('indexCliente');
+>>>>>>> parent of 35697c7 (Arreglos)
 =======
 Route::view('/', 'index')->name('index');
 Route::view('/indexAdmin', 'indexAdmin')->name('indexAdmin');
