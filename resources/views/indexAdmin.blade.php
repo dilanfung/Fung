@@ -1,112 +1,8 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+@extends('layoutAdmin')
 
-    <!-- Basic -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">   
-   
-    <!-- Mobile Metas -->
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
- 
-     <!-- Site Metas -->
-	<title>FUNG Servicio Automotriz</title>
-    <meta name="keywords" content="">
-    <meta name="description" content="">
-    <meta name="author" content="">
+@section('titulo','indexAdmin')
 
-    <!-- Site Icons -->
-    <link rel="shortcut icon" href="../../public/images/LofoFungU.ico" type="image/x-icon" />
-    <link rel="apple-touch-icon" href="../../public/images/apple-touch-icon.png">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <!-- Site CSS -->
-    <link rel="stylesheet" href="../css/style.css">
-    <!-- Responsive CSS -->
-    <link rel="stylesheet" href="../css/responsive.css">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="../css/custom.css">
-	<script src="../js/modernizr.js"></script> <!-- Modernizr -->
-	<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
-
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-</head>
-<body id="page-top" class="politics_version">
-
-    <!-- LOADER -->
-    <div id="preloader">
-        <div id="main-ld">
-			<div id="loader"></div>  
-		</div>
-    </div><!-- end loader -->
-    <!-- END LOADER -->
-	
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-		<div class="container">
-		  <a class="navbar-brand js-scroll-trigger" href="#page-top">
-			  <img class="img-fluid" src="../../public/images/LogoFung.png" alt="" />
-		  </a>
-		  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-			<i class="fa fa-bars"></i>
-		  </button>
-		  <div class="collapse navbar-collapse" id="navbarResponsive">
-			<a id="navbarDropdown" class="nav-link dropdown-toggle"  >{{ Auth::user()->name }}</a>
-			<ul class="navbar-nav text-uppercase ml-auto">
-			  	<li class="nav-item">
-				  	<a class="nav-link js-scroll-trigger" href="indexAdmin.blade.php">Inicio</a>
-				</li>
-				<li class="nav-item">
-				  	<a class="nav-link js-scroll-trigger" href="citasAdmin.blade.php">Citas</a>
-				</li>
-				<li class="nav-item">
-				  	<a class="nav-link js-scroll-trigger" href="{{ route('articulos.index') }}">Inventario</a>
-				</li>
-				<li class="nav-item">
-				  	<a class="nav-link js-scroll-trigger" href="serviciosAdmin.blade.php">Servicios</a>
-				</li>
-				<li class="nav-item">
-				  	<a class="nav-link js-scroll-trigger" href="feedbackAdmin.blade.php">Feedback</a>
-				</li>
-				<li class="nav-item">
-				  	<a class="nav-link js-scroll-trigger" href="clientesAdmin.blade.php">Clientes</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="perfilAdmin.blade.php">Perfil</a>
-				  </li>
-				<li class="nav-item">
-				  	<a class="nav-link js-scroll-trigger" href="{{ route('logout') }}"
-                      onclick="event.preventDefault();
-                                    document.getElementById('logout-form').submit();">
-                       {{ __('Cerrar Sesion') }}
-                   </a>
-
-     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-         @csrf
-				</li>
-			</ul>
-		  </div>
-		</div>
-	  </nav>
-	  
-	  <section id="home" class="main-banner parallaxie" style="background: url('../../public/uploads/mecanica.jpg')">
-		<div class="heading">
-			<h1>Bienvenido a FUNG Servicio Automotriz</h1>			
-			<h3 class="cd-headline clip is-full-width">
-				<span>Servicios Como: </span>
-				<span class="cd-words-wrapper">
-					<b class="is-visible">Mantenimientos Preventivo</b>
-					<b>Mecánica Rápida</b>
-					<b>Diagnóstico Vehícular</b>
-					<b>RTV</b>
-				</span>
-			</h3>
-		</div>
-	</section>
+@section('contenido')
 
 	<div id="about" class="section lb">
 		<div class="container">
@@ -352,3 +248,4 @@
 
 </body>
 </html>
+@endsection
