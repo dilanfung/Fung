@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-	<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-
     <!-- Basic -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">   

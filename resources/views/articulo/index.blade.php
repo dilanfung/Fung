@@ -17,17 +17,10 @@
                                 {{ __('Articulos') }}
                             </span>
 
-                          
-                             
-                            
-
                              <div class="float-right">
-                                <a href="{{ route('home') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Inicio') }}
+                                <a href="{{ route('articulos.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                  {{ __('Crear Nuevo') }}
                                 </a>
-                                <a href="{{ route('home') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                    {{ __('Crear Nuevo') }}
-                                  </a>
                               </div>
                         </div>
                     </div>
