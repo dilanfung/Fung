@@ -9,7 +9,7 @@ Route::view('/', 'index')->name('index');
 Route::view('/indexAdmin', 'indexAdmin')->name('indexAdmin');
 Route::view('/indexCliente', 'indexCliente')->name('indexCliente');
 
-
+Route::resource('home', 'HomeController'); 
 
 
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
