@@ -22,8 +22,8 @@
 			@forelse ($clientesAdmin as $clienteAdminItem)
 				<tr>
 					<td>{{$clienteAdminItem->id}}</td>
-					<td>{{$clienteAdminItem->nombre}}</td>
-					<td>{{$clienteAdminItem->correo}}</td>	
+					<td>{{$clienteAdminItem->name}}</td>
+					<td>{{$clienteAdminItem->email}}</td>	
 					<td>
 						<button data-toggle="modal" data-target="#modalEditarCliente" 
 						class="button--save datatable-button fa-edit"></button>
