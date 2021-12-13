@@ -67,20 +67,20 @@
 							<a class="nav-link js-scroll-trigger" href="perfilAdmin">Perfil</a>
 						</li>
 
-					<li class="nav-item">
-				  	<a class="nav-link js-scroll-trigger" href="{{ route('logout') }}"
-                      onclick="event.preventDefault();
-                                    document.getElementById('logout-form').submit();">
-                       {{ __('Cerrar Sesion') }}
-                   </a>
-
-     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-         @csrf
-				</li>
-			</ul>
-		  </div>
-		</div>
-	  </nav>
+						<li class="nav-item">
+							<a class="nav-link js-scroll-trigger" href="{{ route('logout') }}"
+							onclick="event.preventDefault();
+										  document.getElementById('logout-form').submit();">
+							 {{ __('Cerrar Sesion') }}
+						 </a>
+	  
+		   <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+			   @csrf
+					  </li>
+				  </ul>
+				</div>
+			  </div>
+			</nav>
 		
 		<section id="home" class="main-banner small-main-banner parallaxie" >
 			<div class="heading small-heading">
