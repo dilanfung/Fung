@@ -51,7 +51,7 @@
 						<a class="nav-link js-scroll-trigger" href="CitasAdmin">Citas</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link js-scroll-trigger" href="inventarioAdmin">Inventario</a>
+						<a class="nav-link js-scroll-trigger" href="articulos">Inventario</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link js-scroll-trigger" href="serviciosAdmin">Servicios</a>
