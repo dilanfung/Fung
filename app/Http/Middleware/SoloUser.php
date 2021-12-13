@@ -19,7 +19,7 @@ class SoloUser
     {
         switch(auth::user()->tipo){
             case ('1'):
-                return redirect('home');//si es administrador redirige al HOME
+                return redirect('index');//si es administrador redirige al HOME
             break;
 			case('2'):
                 return $next($request);// si es un usuario continua ruta USER

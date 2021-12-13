@@ -1,59 +1,10 @@
-@extends('layoutIndex')
+@extends('layoutAdmin')
+
+@section('titulo','indexAdmin')
 
 @section('contenido')
-	<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-		<div class="container">
-			<a class="navbar-brand js-scroll-trigger" href="#page-top">
-				<img class="img-fluid" src="{{URL::asset('images/LogoFung.png')}}" alt="" />
-			</a>
-			<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-				<i class="fa fa-bars"></i>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarResponsive">
-				<ul class="navbar-nav text-uppercase ml-auto">
-					<li class="nav-item">
-						<a class="nav-link js-scroll-trigger" href="indexAdmin">Inicio</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link js-scroll-trigger" href="CitasAdmin">Citas</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link js-scroll-trigger" href="inventarioAdmin">Inventario</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link js-scroll-trigger" href="serviciosAdmin">Servicios</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link js-scroll-trigger" href="feedbackAdmin">Feedback</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link js-scroll-trigger" href="clientesAdmin">Clientes</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link js-scroll-trigger" href="perfilAdmin">Perfil</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link js-scroll-trigger" href="index">Cerrar Sesión</a>
-					</li>
-				</ul>
-			  </div>
-		</div>
-	</nav>
 	  
-	<section id="home" class="main-banner parallaxie" style="background: url('../../public/uploads/mecanica.jpg')">
-		<div class="heading">
-			<h1>Bienvenido a FUNG Servicio Automotriz</h1>			
-			<h3 class="cd-headline clip is-full-width">
-				<span>Servicios Como: </span>
-				<span class="cd-words-wrapper">
-					<b class="is-visible">Mantenimientos Preventivo</b>
-					<b>Mecánica Rápida</b>
-					<b>Diagnóstico Vehícular</b>
-					<b>RTV</b>
-				</span>
-			</h3>
-		</div>
-	</section>
+	
 
 	<div id="about" class="section lb">
 		<div class="container">
@@ -249,4 +200,4 @@
 			</div>
 		</div><!-- end container -->
 	</div><!-- end section -->
-@endsection	
+	@endsection
