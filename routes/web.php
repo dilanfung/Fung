@@ -6,7 +6,10 @@ use App\http\Controllers\perfilAdminVehiculoController;
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/encuestaSatisfaccionCliente', [App\Http\Controllers\EncuestaController::class, 'index'])->name('encuestaSatisfaccionCliente');
+Route::view('/', 'index')->name('index');
+Route::view('/indexAdmin', 'indexAdmin')->name('indexAdmin');
+Route::view('/indexCliente', 'indexCliente')->name('indexCliente');
+
 Route::resource('/user', UserController::class);
 
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -30,6 +33,7 @@ Route::resource('encuesta', 'encuestaController')->middleware('solouser');
 Route::resource('feedbackCliente', 'feedbackClienteController')->middleware('solouser');
 Route::resource('articulos', 'ArticuloController') ->middleware('soloadmin');
 Route::resource('retroalimentacion', 'retroalimentacionController') ->middleware('soloadmin');;
+Route::get('/encuestaSatisfaccionCliente', [App\Http\Controllers\EncuestaController::class, 'index'])->name('encuestaSatisfaccionCliente');
 
 
 
