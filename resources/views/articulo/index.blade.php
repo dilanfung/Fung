@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layoutAdmin)
 
 @section('template_title')
     Articulo
