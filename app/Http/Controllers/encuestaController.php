@@ -32,7 +32,7 @@ class encuestaController extends Controller
 
  
 
-        return redirect()->route('indexAdmin');
+        return redirect()->route('indexCliente');
 
         
     }
