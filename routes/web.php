@@ -5,7 +5,7 @@ use App\http\Controllers\perfilAdminVehiculoController;
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::view('/', 'index')->name('index');
 Route::view('/indexAdmin', 'indexAdmin')->name('indexAdmin');
 Route::view('/indexCliente', 'indexCliente')->name('indexCliente');
