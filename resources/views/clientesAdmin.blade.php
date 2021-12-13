@@ -25,7 +25,7 @@
 					<td>{{$clienteAdminItem->name}}</td>
 					<td>{{$clienteAdminItem->email}}</td>	
 					<td>
-						<button data-toggle="modal" data-target="#modalEditarCliente{{$clientesAdmin->id}}" 
+						<button data-toggle="modal" data-target="#modalEditarCliente{{$clientesAdminItem->id}}" 
 						class="button--save datatable-button fa-edit" value="{{$clientesAdmin->id}}"></button>
 					</td>
 				</tr>
