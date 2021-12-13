@@ -57,27 +57,27 @@
 		  <div class="collapse navbar-collapse" id="navbarResponsive">
 			<a id="navbarDropdown" class="nav-link dropdown-toggle"  >{{ Auth::user()->name }}</a>
 			<ul class="navbar-nav text-uppercase ml-auto">
-			  	<li class="nav-item">
-				  	<a class="nav-link js-scroll-trigger" href="indexAdmin.blade.php">Inicio</a>
+				<li class="nav-item">
+					<a class="nav-link js-scroll-trigger" href="indexAdmin">Inicio</a>
 				</li>
 				<li class="nav-item">
-				  	<a class="nav-link js-scroll-trigger" href="citasAdmin.blade.php">Citas</a>
+					<a class="nav-link js-scroll-trigger" href="CitasAdmin">Citas</a>
 				</li>
 				<li class="nav-item">
-				  	<a class="nav-link js-scroll-trigger" href="{{ route('articulos.index') }}">Inventario</a>
+					<a class="nav-link js-scroll-trigger" href="inventarioAdmin">Inventario</a>
 				</li>
 				<li class="nav-item">
-				  	<a class="nav-link js-scroll-trigger" href="serviciosAdmin.blade.php">Servicios</a>
+					<a class="nav-link js-scroll-trigger" href="serviciosAdmin">Servicios</a>
 				</li>
 				<li class="nav-item">
-				  	<a class="nav-link js-scroll-trigger" href="feedbackAdmin.blade.php">Feedback</a>
+					<a class="nav-link js-scroll-trigger" href="feedbackAdmin">Feedback</a>
 				</li>
 				<li class="nav-item">
-				  	<a class="nav-link js-scroll-trigger" href="clientesAdmin.blade.php">Clientes</a>
+					<a class="nav-link js-scroll-trigger" href="clientesAdmin">Clientes</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="perfilAdmin.blade.php">Perfil</a>
-				  </li>
+					<a class="nav-link js-scroll-trigger" href="perfilAdmin">Perfil</a>
+				</li>
 				<li class="nav-item">
 				  	<a class="nav-link js-scroll-trigger" href="{{ route('logout') }}"
                       onclick="event.preventDefault();
