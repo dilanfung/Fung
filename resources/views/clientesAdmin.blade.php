@@ -14,7 +14,6 @@
 			<tr>
 				<th>Código del Cliente</th>
 				<th>Nombre del Cliente</th>
-				<th>Apellidos</th>
 				<th>Correo</th>
 				<th>Correo</th>
 			</tr>
@@ -24,7 +23,6 @@
 				<tr>
 					<td>{{$clienteAdminItem->id}}</td>
 					<td>{{$clienteAdminItem->nombre}}</td>
-					<td>{{$clienteAdminItem->apellidos}}</td>
 					<td>{{$clienteAdminItem->correo}}</td>	
 					<td>
 						<button data-toggle="modal" data-target="#modalEditarCliente" 
@@ -51,10 +49,6 @@
 						<div class="form-group">
 							<label>Nombre</label>
 							<input type="text" class="form-control" name="Nombre">
-						</div>
-						<div class="form-group">
-							<label>Apellidos</label>
-							<input type="text" class="form-control" name="Apellidos">
 						</div>
 						<div class="form-group">
 							<label>Correo</label>
