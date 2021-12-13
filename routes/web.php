@@ -5,27 +5,13 @@ use App\http\Controllers\perfilAdminVehiculoController;
 
 Auth::routes();
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::view('/', 'index')->name('index');
-Route::view('/indexAdmin', 'indexAdmin')->name('indexAdmin');
-Route::view('/indexCliente', 'indexCliente')->name('indexCliente');
-
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/encuestaSatisfaccionCliente', [App\Http\Controllers\EncuestaController::class, 'index'])->name('encuestaSatisfaccionCliente');
 Route::resource('/user', UserController::class);
-=======
-Route::view('/', 'index')->name('index');
-Route::view('/indexAdmin', 'indexAdmin')->name('indexAdmin');
-Route::view('/indexCliente', 'indexCliente')->name('indexCliente');
->>>>>>> parent of 35697c7 (Arreglos)
-=======
-Route::view('/', 'index')->name('index');
-Route::view('/indexAdmin', 'indexAdmin')->name('indexAdmin');
-Route::view('/indexCliente', 'indexCliente')->name('indexCliente');
->>>>>>> parent of 35697c7 (Arreglos)
 
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::resource('/user', UserController::class);
+Route::view('/', 'Index')->name('index');
+
 Route::resource('CitasAdmin', 'citas_admin_controller')->middleware('soloadmin'); 
 Route::resource('CitasCliente', 'citas_cliente_controller')->middleware('solouser');
 Route::resource('perfilAdmin', 'perfilAdminController')->middleware('soloadmin');
@@ -44,7 +30,6 @@ Route::resource('encuesta', 'encuestaController')->middleware('solouser');
 Route::resource('feedbackCliente', 'feedbackClienteController')->middleware('solouser');
 Route::resource('articulos', 'ArticuloController') ->middleware('soloadmin');
 Route::resource('retroalimentacion', 'retroalimentacionController') ->middleware('soloadmin');;
-Route::get('/encuestaSatisfaccionCliente', [App\Http\Controllers\EncuestaController::class, 'index'])->name('encuestaSatisfaccionCliente');
 
 
 
