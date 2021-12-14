@@ -40,7 +40,7 @@
 		<div id="modalEditarCliente" class="modal modal-top fade">
 			<div class="modal-dialog modal-dialog-centered">
 				<div class="modal-content">
-					<form id="add-event" method="POST" action="{{ url('/clientesAdmin/'.$clienteAdminItem2->id) }}">
+					<form id="add-event" method="POST" action="{{ url('/clientesAdmin/'.$clientesAdminItem2->id) }}">
 						@csrf
 						{{ @method_field('PATCH') }}
 						<div class="modal-body">
