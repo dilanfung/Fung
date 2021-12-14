@@ -65,8 +65,7 @@ class crearProveedorAdminController extends Controller
         $request->input('NombreM').'","'.
         $request->input('DireccionM').'","'.
         $request->input('FechaM').'","'.
-        $request->input('CedulaM').'","'.
-        $request->input('CategoriaM').'");');
+        $request->input('CedulaM').'");');
         return redirect()->route('crearProveedorAdmin.index');
         //return response()->json($request);
     }
