@@ -36,7 +36,7 @@ Route::resource('retroalimentacion', 'retroalimentacionController') ->middleware
 
 Route::get('/encuestaSatisfaccionCliente', [App\Http\Controllers\EncuestaController::class, 'index'])->name('encuestaSatisfaccionCliente');
 
-Route::get('/serviciosCliente', [App\Http\Controllers\serviciosClienteController::class, 'index'])->name('serviciosCliente');
+
 
 
 /*use App\Http\Controllers\clientesAdminController;
