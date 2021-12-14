@@ -32,7 +32,7 @@
 								<label>Usuario</label>
 								<select class="form-control" id="categoria" name="Categoria" id="Categoria">
 									@forelse($categorias as $categorias)
-										<option value="{{$categorias->int}}">
+										<option value="{{$categorias->id}}">
 											{{$categorias->nombre}}
 										</option>
 									@empty
