@@ -93,7 +93,7 @@
 										<select class="form-control" id="Usuario" name="Usuario">
 											@forelse($usuarios as $usuario)
 												<option value="{{ $usuario->id }}">
-													{{ $usuario->nombre }} {{ $usuario->apellidos }}
+													{{ $usuario->name }} 
 												</option>
 											@empty
 												No hay carros disponibles.
