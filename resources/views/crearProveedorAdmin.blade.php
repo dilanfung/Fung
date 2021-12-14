@@ -32,7 +32,7 @@
 								<label>Usuario</label>
 								<select class="form-control" id="categoria" name="Categoria" id="Categoria">
 									@forelse($categorias as $categorias)
-										<option value="{{$categorias->int}}">
+										<option value="{{$categorias->id}}">
 											{{$categorias->nombre}}
 										</option>
 									@empty
@@ -103,7 +103,7 @@
 					<td>{{$proveedor->cedula}}</td>
 					<td>{{$proveedor->nombreC}}</td>
 					<td>
-						<button data-toggle="modal" data-target="#modalEditarProveedor" 
+						<button data-toggle="modal" data-target="#modalEditarProveedor{{ $proveedor->id }}" 
 						class="button--save datatable-button fa-edit"></button>
 						<form method="POST" action="{{ url('/crearProveedorAdmin'.$proveedor->id) }}">
 							@csrf 
@@ -118,55 +118,52 @@
 			</tbody>
 		</table>
 
-		<div id="modalEditarProveedor" class="modal modal-top fade">
-			<div class="modal-dialog modal-dialog-centered">
-				<div class="modal-content">
-					<form id="add-event" method="POST" action="{{ url('/crearProveedorAdmin/'.$proveedor->id) }}">
-						@csrf
-						{{ @method_field('PATCH') }}
-						<div class="modal-body">
-							<h4>Favor ingresar datos del proveedor</h4>
-							<div class="form-group">
-								<label>Identificador del proveedor</label>
-								<input type="text" class="form-control" name="IdM" id="IdM">
+		@forelse($proveedor2 as $proveedor2)
+			<div id="modalEditarProveedor{{ $proveedor2->id }}" class="modal modal-top fade">
+				<div class="modal-dialog modal-dialog-centered">
+					<div class="modal-content">
+						<form id="add-event" method="POST" action="{{ url('/crearProveedorAdmin/'.$proveedor2->id) }}">
+							@csrf
+							{{ @method_field('PATCH') }}
+							<div class="modal-body">
+								<h4>Favor ingresar datos del proveedor</h4>
+								<div class="form-group">
+									<label>Identificador del proveedor</label>
+									<input type="text" class="form-control" name="IdM" id="IdM" value="{{ $proveedor2->id }}" readonly>
+								</div>
+								<div class="form-group">
+									<label>Nombre</label>
+									<input type="text" class="form-control" name="NombreM" id="NombreM" value="{{ $proveedor2->nombre }}">
+								</div>
+								<div class="form-group">
+									<label>Dirección</label>
+									<input type="text" class="form-control" name="DireccionM" id="DireccionM" value="{{ $proveedor2->direccion }}">
+								</div>
+								<div class="form-group">
+									<label>Fecha ingreso</label>
+									<input type='date' class="form-control" name="FechaM" id="FechaM" value="{{ $proveedor2->fecha }}">
+								</div>
+								<div class="form-group">
+									<label>Cédula</label>
+									<input type='text' class="form-control" name="CedulaM" id="CedulaM" value="{{ $proveedor2->cedula }}">
+								</div>
+								<div class="form-group" hidden>
+									<label>Catergoria</label>
+									<input type='text' class="form-control" id="categoria" name="CategoriaM" id="CategoriaM" value="{{ $proveedor2->nombreC }}" readonly>
+
+								</div>
 							</div>
-							<div class="form-group">
-								<label>Nombre</label>
-								<input type="text" class="form-control" name="NombreM" id="NombreM">
+							<div class="modal-footer">
+								<button type="submit" class="btn btn-primary" >Guardar</button>
+								<button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>        
 							</div>
-							<div class="form-group">
-								<label>Dirección</label>
-								<input type="text" class="form-control" name="DireccionM" id="DireccionM">
-							</div>
-							<div class="form-group">
-								<label>Fecha ingreso</label>
-								<input type='date' class="form-control" name="FechaM" id="FechaM">
-							</div>
-							<div class="form-group">
-								<label>Cédula</label>
-								<input type='text' class="form-control" name="CedulaM" id="CedulaM">
-							</div>
-							<div class="form-group">
-								<label>Usuario</label>
-								<select class="form-control" id="categoria" name="CategoriaM" id="CategoriaM">
-									@forelse($categorias as $categoria)
-										<option value="{{$categorias->int}}">
-											{{$categorias->nombre}}
-										</option>
-									@empty
-										No hay categorias disponibles.
-									@endforelse
-							</select>
-							</div>
-						</div>
-						<div class="modal-footer">
-							<button type="submit" class="btn btn-primary" >Guardar</button>
-							<button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>        
-						</div>
-					</form>
+						</form>
+					</div>
 				</div>
 			</div>
-
+		@empty
+			No hay categorias disponibles.
+		@endforelse
 		<!--Fin contenido-->
 
 @endsection

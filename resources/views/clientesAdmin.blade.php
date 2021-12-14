@@ -37,7 +37,7 @@
 
 	@forelse ($clientesAdmin2 as $clientesAdminItem2)
 
-		<div id="modalEditarCliente" class="modal modal-top fade">
+		<div id="modalEditarCliente{{$clientesAdminItem2->id}}" class="modal modal-top fade">
 			<div class="modal-dialog modal-dialog-centered">
 				<div class="modal-content">
 					<form id="add-event" method="POST" action="{{ url('/clientesAdmin/'.$clientesAdminItem2->id) }}">
