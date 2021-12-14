@@ -36,7 +36,7 @@ class clientesAdminController extends Controller{
  
         $clientes = DB::select('CALL `fungdb`.`mostrar_clientes`();');
         $clientes2 = DB::select('CALL `fungdb`.`mostrar_clientes`();');
-        return view('clientesAdmin', [ "clientesAdmin" => $clientes,"clientesAdmin" => $clientes2 ]);
+        return view('clientesAdmin', [ "clientesAdmin" => $clientes,"clientesAdmin2" => $clientes2 ]);
     }
     
     public function update(Request $request, $id)
