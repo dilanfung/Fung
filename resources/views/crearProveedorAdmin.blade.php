@@ -147,10 +147,9 @@
 									<label>Cédula</label>
 									<input type='text' class="form-control" name="CedulaM" id="CedulaM" value="{{ $proveedor2->cedula }}">
 								</div>
-								<div class="form-group" hidden>
+								<div class="form-group">
 									<label>Catergoria</label>
 									<input type='text' class="form-control" id="categoria" name="CategoriaM" id="CategoriaM" value="{{ $proveedor2->nombreC }}" readonly>
-
 								</div>
 							</div>
 							<div class="modal-footer">
