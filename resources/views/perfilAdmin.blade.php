@@ -49,60 +49,7 @@
 			<a href="perfilAdminVehiculo"><button class="sim-btn hvr-bounce-to-top">Ver vehículos</button></a>
 		</div>
 
-		<table id="" class="table table-striped table-bordered" cellspacing="0" width="100%">
-			<thead>
-				<tr>
-					<th>Código del Cliente</th>
-					<th>Nombre del Cliente</th>
-					<th>Correo</th>
-					<th>Teléfono</th>
-					<th>Editar/Eliminar</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<!--????-->
-					<td>001</td>
-					<td>Alejandro</td>
-					<td>gregrg@gmail.com</td>
-					<td>2484154</td>
-					<td>
-						<button data-toggle="modal" data-target="#modalUsuario" class="button--save datatable-button fa-edit"></button>
-						<button class="button--delete datatable-button fa-trash"></button>
-					</td>
-				</tr>
-			</tbody>
-		</table>
+		
 
-		<div id="modalUsuario" class="modal modal-top fade">
-			<div class="modal-dialog modal-dialog-centered">
-				<div class="modal-content">
-					<form id="add-event">
-						<div class="modal-body">
-							<div class="form-group">
-								<label>Nombre</label>
-								<input type="text" class="form-control" name="">
-							</div>
-							<div class="form-group">
-								<label>Apellidos</label>
-								<input type="text" class="form-control" name="">
-							</div>
-							<div class="form-group">
-								<label>Correo</label>
-								<input type="text" class="form-control" name="">
-							</div>
-							<div class="form-group">
-								<label>Contraseña</label>
-								<input type="text" class="form-control" name="">
-							</div>
-						</div>
-						<div class="modal-footer">
-							<button type="submit" class="btn btn-primary">Guardar</button>
-							<button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
-						</div>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
+	
 @endsection
