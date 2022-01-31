@@ -10,7 +10,7 @@
 		
 	<div class="section-title text-center">
 		<br><h3>Mantenimiento de promociones de servicios</h3>
-		<a href="promocionesAdmin"><button class="sim-btn hvr-bounce-to-top">Ver promociones</button> </a>
+		<a href="promocionesAdmin"><button class="sim-btn hvr-bounce-to-top">Crear/Ver promociones</button> </a>
 	</div>
 
 	<table id="" class="table table-striped table-bordered" cellspacing="0" width="100%">
