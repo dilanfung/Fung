@@ -37,7 +37,7 @@
 						@if (session('error'))
 							<div class="alert alert-danger">{{ session('error') }}</div>
 						@endif
-						<form method="POST" action="{{ url('/promocionesAdmin/'.$servicio->id) }}">
+						<form method="POST" action="{{ url('/serviciosAdmin/'.$servicio->id) }}">
 							@csrf 
 							{{ @method_field('DELETE') }}
 							<button onclick="return confirm('¿Esta seguro que desea eliminar este servicio?')" class="button--delete datatable-button fa-trash"></button>
