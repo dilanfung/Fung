@@ -105,6 +105,11 @@
 							placeholder="200,000 a 500,000" name="costo">
 						</div>
 						<div class="form-group">
+							<label for="TiempoEsti">Servicio Promocion</label>
+							<input type="int" class="form-control" id="promocion_p" 
+							placeholder="1" name="promocion_p">
+						</div>
+						<div class="form-group">
 							<label for="TiempoEsti">Tiempo estimado</label>
 							<input type="text" class="form-control" id="tiempo_estimado" 
 							placeholder="2 horas" name="tiempo_estimado">
