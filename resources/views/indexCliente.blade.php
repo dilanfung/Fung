@@ -29,14 +29,20 @@
 						<a class="nav-link js-scroll-trigger" href="perfilCliente">Perfil</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link js-scroll-trigger" href="index">Cerrar Sesión</a>
+						<a class="nav-link js-scroll-trigger" href="{{ route('logout') }}"
+							onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+						   	{{ __('Cerrar Sesión') }}
+					   	</a>
+						<form id="logout-form" action="{{ route('logout'); }}" method="POST" class="d-none">
+							@csrf
+						</form>
 					</li>
 				</ul>
 			</div>
 		</div>
 	</nav>
   
-	<section id="home" class="main-banner parallaxie" style="background: url('../../public/uploads/mecanica.jpg')">
+	<section id="home" class="main-banner parallaxie" style="background: url('../uploads/mecanica.jpg')">
 		<div class="heading">
 			<h1>Bienvenido a FUNG Servicio Automotriz</h1>			
 			<h3 class="cd-headline clip is-full-width">

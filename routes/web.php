@@ -14,7 +14,7 @@ Route::resource('home', 'HomeController');
 
 
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::resource('/user', UserController::class);
+Route::resource('user', 'UserController');
 
 Route::resource('CitasAdmin', 'citas_admin_controller')->middleware('soloadmin'); 
 Route::resource('CitasCliente', 'citas_cliente_controller')->middleware('solouser');
@@ -36,9 +36,6 @@ Route::resource('articulos', 'ArticuloController') ->middleware('soloadmin');
 Route::resource('retroalimentacion', 'retroalimentacionController') ->middleware('soloadmin');
 
 Route::get('/encuestaSatisfaccionCliente', [App\Http\Controllers\EncuestaController::class, 'index'])->name('encuestaSatisfaccionCliente');
-
-
-
 
 /*use App\Http\Controllers\clientesAdminController;
 |--------------------------------------------------------------------------
