@@ -44,7 +44,7 @@
 				<div class="collapse navbar-collapse" id="navbarResponsive">
 					<ul class="navbar-nav text-uppercase ml-auto">
 						<li class="nav-item">
-							<a class="nav-link js-scroll-trigger" href="indexCliente">Inicio</a>
+							<a class="nav-link js-scroll-trigger" href="user">Inicio</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link js-scroll-trigger" href="CitasCliente">Citas</a>
@@ -59,14 +59,20 @@
 							<a class="nav-link js-scroll-trigger" href="perfilCliente">Perfil</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link js-scroll-trigger" href="index">Cerrar Sesión</a>
+							<a class="nav-link js-scroll-trigger" href="{{ route('logout') }}"
+								onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+								{{ __('Cerrar Sesión') }}
+						   	</a>
+							<form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+								@csrf
+							</form>
 						</li>
 					</ul>
 			  	</div>
 			</div>
 		</nav>
 		
-		<section id="home" class="main-banner small-main-banner parallaxie" >
+		<section id="home" class="main-banner small-main-banner parallaxie"  style="background: url('../uploads/mecanica.jpg')" >
 			<div class="heading small-heading">
 				<h1></h1>
 				<h3 class="cd-headline clip is-full-width">

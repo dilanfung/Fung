@@ -36,7 +36,7 @@
 		<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
 			<div class="container">
 			  <a class="navbar-brand js-scroll-trigger" href="#page-top">
-				  <img class="img-fluid" src="../../public/images/LogoFung.png" alt="" />
+				  <img class="img-fluid" src="../images/LogoFung.png" alt="" />
 			  </a>
 			  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 				<i class="fa fa-bars"></i>
@@ -45,7 +45,7 @@
 				<a id="navbarDropdown" class="nav-link dropdown-toggle"  >{{ Auth::user()->name }}</a>
 				<ul class="navbar-nav text-uppercase ml-auto">
 					<li class="nav-item">
-						<a class="nav-link js-scroll-trigger" href="indexAdmin">Inicio</a>
+						<a class="nav-link js-scroll-trigger" href="home">Inicio</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link js-scroll-trigger" href="CitasAdmin">Citas</a>
@@ -66,21 +66,20 @@
 						<a class="nav-link js-scroll-trigger" href="perfilAdmin">Perfil</a>
 					</li>
 					<li class="nav-item">
-						  <a class="nav-link js-scroll-trigger" href="{{ route('logout') }}"
-						  onclick="event.preventDefault();
-										document.getElementById('logout-form').submit();">
-						   {{ __('Cerrar Sesion') }}
-					   </a>
-	
-		 
-			 @csrf
+						<a class="nav-link js-scroll-trigger" href="{{ route('logout') }}"
+							onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+						   	{{ __('Cerrar Sesión') }}
+					   	</a>
+						<form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+							@csrf
+						</form>
 					</li>
 				</ul>
 			  </div>
 			</div>
 		  </nav>
 		
-		<section id="home" class="main-banner small-main-banner parallaxie" >
+		<section id="home" class="main-banner small-main-banner parallaxie"  style="background: url('../uploads/mecanica.jpg')" >
 			<div class="heading small-heading">
 				<h1></h1>
 				<h3 class="cd-headline clip is-full-width">

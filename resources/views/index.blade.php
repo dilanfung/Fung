@@ -5,7 +5,7 @@
 	<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
 		<div class="container">
 			<a class="navbar-brand js-scroll-trigger" href="#page-top">
-				<img class="img-fluid" src="../../public/images/LogoFung.png" alt="" />
+				<img class="img-fluid" src="../images/LogoFung.png" alt="" />
 			</a>
 			<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" 
 				data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,12 +25,18 @@
 					<li class="nav-item">
 						<a class="nav-link js-scroll-trigger" href="#contact">Contacto</a>
 					</li>
+					<!--<li class="nav-item">
+						<a class="nav-link js-scroll-trigger" href="login">Iniciar Sesión</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link js-scroll-trigger" href="register">Registrarse</a>
+					</li>-->
 				</ul>
 			</div>
 		</div>
 	</nav>
 	
-	<section id="home" class="main-banner parallaxie" style="background: url('../../public/uploads/mecanica.jpg')">
+	<section id="home" class="main-banner parallaxie" style="background: url('../uploads/mecanica.jpg')">
 		<div class="heading">
 			<h1>Bienvenido a FUNG Servicio Automotriz</h1>			
 			<h3 class="cd-headline clip is-full-width">

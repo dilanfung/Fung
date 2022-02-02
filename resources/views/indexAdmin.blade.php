@@ -1,11 +1,8 @@
 @extends('layoutAdmin')
 
-@section('titulo','indexAdmin')
+@section('titulo','Inicio (Administrador)')
 
 @section('contenido')
-	  
-	
-
 	<div id="about" class="section lb">
 		<div class="container">
 			<div class="section-title text-center">
