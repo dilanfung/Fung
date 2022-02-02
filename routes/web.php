@@ -6,6 +6,7 @@ use App\http\Controllers\perfilAdminVehiculoController;
 Auth::routes();
 
 Route::view('/', 'index')->name('index');
+Route::view('/index', 'index')->name('index');
 Route::view('/indexAdmin', 'indexAdmin')->name('indexAdmin');
 Route::view('/indexCliente', 'indexCliente')->name('indexCliente');
 
