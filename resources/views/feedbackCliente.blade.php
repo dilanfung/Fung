@@ -52,7 +52,7 @@
         <h3>Encuesta de satisfacción</h3>
         <p>¿Está disfrutando de nuestros servicios? Lo invitamos a llenar nuestra encuesta de satisfacción</p>
         <br>
-        <a href="encuestaSatisfaccionCliente.blade.php" class="sim-btn hvr-bounce-to-top">Hacer encuesta</a>
+        <a href="{{ route('encuestaSatisfaccionCliente') }}" class="sim-btn hvr-bounce-to-top">Hacer encuesta</a>
       </div>
     </div>
   </div>
