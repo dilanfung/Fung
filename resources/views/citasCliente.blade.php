@@ -89,7 +89,7 @@
 									</div>
 									<div class="form-group">
 										<label>Usuario</label>
-										<input type="text" class="form-control" name="Usuario" id="Usuario" value="2">
+										<input type="text" class="form-control" name="Usuario" id="Usuario" value="{{ $usuario2 }}" readonly>
 									</div>
 									<div class="form-group">
 										<label>Vehículo</label>
@@ -133,7 +133,7 @@
 						</div>
 						<div class="form-group">
 							<label>Usuario</label>
-							<input type="text" class="form-control" name="Usuario" id="Usuario" value="2" readonly>
+							<input type="text" class="form-control" name="Usuario" id="Usuario" value="{{ $usuario2 }}" readonly>
 						</div>
 						<div class="form-group">
 							<label>Vehículo</label>

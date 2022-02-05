@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use IlluminateSupportFacadesDB;
 use DoctrineDBALDriverPDOConnection;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+
 
 
 class citas_cliente_controller extends Controller
@@ -19,11 +21,12 @@ class citas_cliente_controller extends Controller
     public function index()
     {
         //$usuario->session()->get('id'); 
-        $usuario = '2'; //test en lo que se averigua como sacar el usuario de session storage
+        $usuario = Auth::user()->id; 
+        $usuario2 = Auth::user()->id;
         //->paginate(20); //resolver lo de la paginacion
         $citas = DB::select('CALL `fungdb`.`mostrar_cita`('.$usuario.');');
         $vehiculos = DB::select('CALL `fungdb`.`mostrar_vehiculo_usuario`('.$usuario.');');
-        return view('citasCliente', [ "citas" => $citas, "vehiculos" => $vehiculos ]);
+        return view('citasCliente', [ "citas" => $citas, "vehiculos" => $vehiculos, "usuario" =>$usuario,"usuario2" =>$usuario2 ]);
     }
 
     /**
