@@ -30,7 +30,7 @@ class citas_admin_controller extends Controller
     public function store(Request $request)
     {
         DB::select('CALL `fungdb`.`crear_cita`("'.
-        $request->input('Fecha').' '.$request->input('Hora').'", '.
+        $request->input('Fecha').' '.$request->input('Hora').':00'.'", '.
         $request->input('Usuario').', '.
         $request->input('Vehiculo').');');
         return redirect()->route('CitasAdmin.index');
