@@ -1,12 +1,9 @@
 <?php
-
 namespace App\Http\Controllers;
-
-
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use DoctrineDBALDriverPDOConnection;
 use Illuminate\Support\Facades\DB;
-
 
 class perfilclienteVehiculoController extends Controller
 {
@@ -18,11 +15,12 @@ class perfilclienteVehiculoController extends Controller
     public function index()
     {
         //
-       
-         $usuario = '2'; //test en lo que se averigua como sacar el usuario de session storage
-         //->paginate(20); //resolver lo de la paginacion
-         $vehiculos = DB::select('CALL `fungdb`.`mostrar_vehiculo_usuario`('. auth::user()->id. ');');
-         return view('perfilClienteVehiculo', [ "vehiculos" => $vehiculos ]);
+        //$value = session('key', 'default');
+        
+        //$usuario = '2'; //test en lo que se averigua como sacar el usuario de session storage
+        //->paginate(20); //resolver lo de la paginacion
+        $vehiculos = DB::select('CALL `fungdb`.`mostrar_vehiculo_usuario`('. Auth::user()->id. ');');
+        return view('perfilClienteVehiculo', [ "vehiculos" => $vehiculos ]);
     }
 
     /**
