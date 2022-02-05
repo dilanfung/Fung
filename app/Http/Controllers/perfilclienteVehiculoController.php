@@ -21,7 +21,7 @@ class perfilclienteVehiculoController extends Controller
        
          $usuario = '2'; //test en lo que se averigua como sacar el usuario de session storage
          //->paginate(20); //resolver lo de la paginacion
-         $vehiculos = DB::select('CALL `fungdb`.`mostrar_vehiculo_usuario`('.$usuario.');');
+         $vehiculos = DB::select('CALL `fungdb`.`mostrar_vehiculo_usuario`('. auth::user()->id. ');');
          return view('perfilClienteVehiculo', [ "vehiculos" => $vehiculos ]);
     }
 

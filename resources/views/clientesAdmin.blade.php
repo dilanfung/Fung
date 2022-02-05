@@ -15,7 +15,7 @@
 				<th>Código del Cliente</th>
 				<th>Nombre del Cliente</th>
 				<th>Correo</th>
-				<th>Correo</th>
+				<th>Modificar</th>
 			</tr>
 		</thead>
 		<tbody>

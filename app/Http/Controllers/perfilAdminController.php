@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use DB;
 use App\Models\perfilAdmin;
 use Illuminate\Http\Request;
 
@@ -17,7 +18,8 @@ class perfilAdminController extends Controller
         //
 
        
-        return view ('perfilAdmin');
+        $clientes = DB::select('CALL `fungdb`.`mostrar_clientes`();');
+        return view('perfilAdmin', [ "clientes" => $clientes ]);
     }
 
     /**
