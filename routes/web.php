@@ -26,7 +26,7 @@ Route::resource('clientesAdmin', 'clientesAdminController')->middleware('soloadm
 Route::resource('crearProveedorAdmin', 'crearProveedorAdminController')->middleware('soloadmin');
 Route::resource('serviciosAdmin', 'serv_adminController')->middleware('soloadmin');
 Route::resource('promocionesAdmin', 'servAdminController')->middleware('soloadmin');
-Route::resource('serviciosCliente', 'serviciosClienteController')->middleware('solouser');
+Route::resource('serviciosCliente', 'ServiciosClienteController')->middleware('solouser');
 Route::resource('categoriasProveedor', 'categoriasProveedorController')->middleware('soloadmin');
 Route::resource('categoriasArticulos', 'categoriasArticulosController')->middleware('soloadmin');
 Route::resource('feedbackAdmin', 'feedbackAdminController')->middleware('soloadmin');
