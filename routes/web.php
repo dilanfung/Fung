@@ -9,19 +9,16 @@ Route::view('/', 'index')->name('index');
 Route::view('/index', 'index')->name('index');
 Route::view('/indexAdmin', 'indexAdmin')->name('indexAdmin');
 Route::view('/indexCliente', 'indexCliente')->name('indexCliente');
-
 Route::resource('home', 'HomeController'); 
-
-
-//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('user', 'UserController');
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::resource('CitasAdmin', 'citas_admin_controller')->middleware('soloadmin'); 
 Route::resource('CitasCliente', 'citas_cliente_controller')->middleware('solouser');
 Route::resource('perfilAdmin', 'perfilAdminController')->middleware('soloadmin');
 Route::resource('perfilCliente', 'perfilClienteController')->middleware('solouser');
 Route::resource('perfilAdminVehiculo', 'perfilAdminVehiculoController')->middleware('soloadmin'); 
-Route::resource('perfilClienteVehiculo', 'perfilClienteVehiculoController')->middleware('solouser');
+Route::resource('perfilClienteVehiculo', 'perfilclienteVehiculoController')->middleware('solouser');
 Route::resource('clientesAdmin', 'clientesAdminController')->middleware('soloadmin');
 Route::resource('crearProveedorAdmin', 'crearProveedorAdminController')->middleware('soloadmin');
 Route::resource('serviciosAdmin', 'serv_adminController')->middleware('soloadmin');
@@ -34,8 +31,7 @@ Route::resource('encuesta', 'encuestaController')->middleware('solouser');
 Route::resource('feedbackCliente', 'feedbackClienteController')->middleware('solouser');
 Route::resource('articulos', 'ArticuloController') ->middleware('soloadmin');
 Route::resource('retroalimentacion', 'retroalimentacionController') ->middleware('soloadmin');
-
-Route::get('/encuestaSatisfaccionCliente', [App\Http\Controllers\EncuestaController::class, 'index'])->name('encuestaSatisfaccionCliente');
+Route::get('/encuestaSatisfaccionCliente', [App\Http\Controllers\encuestaController::class, 'index'])->name('encuestaSatisfaccionCliente');
 
 /*use App\Http\Controllers\clientesAdminController;
 |--------------------------------------------------------------------------

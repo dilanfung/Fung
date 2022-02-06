@@ -11,17 +11,14 @@ class encuestaController extends Controller
 {
     public function index()
     {
-    
         return view('encuesta');
     }
-
 
     public function store(Request $request)
     {
         $user=Auth::user()->id;
         DB::select('CALL `fungdb`.`crear_Encuesta`('
         .$user.');');
-
 
         $preg1='1';
         DB::select('CALL `fungdb`.`crear_RespEncuesta`('.$preg1.',' .$user. ','.$request->input('rating-star').');');
@@ -32,10 +29,6 @@ class encuestaController extends Controller
         $preg3='3';
         DB::select('CALL `fungdb`.`crear_RespEncuesta`('.$preg3.',' .$user. ','.$request->input('rating-star3').');');
 
- 
-
         return redirect()->route('indexCliente');
-
-        
     }
 }
