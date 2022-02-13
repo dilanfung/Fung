@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use DB;
 use App\Models\perfilCliente;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class perfilClienteController extends Controller
 {
@@ -16,7 +17,8 @@ class perfilClienteController extends Controller
     public function index()
     {
         //
-        $clientes = DB::select('CALL `fungdb`.`mostrar_clientes`();');
+        $user=Auth::user()->id;
+        $clientes = DB::select('CALL `fungdb`.`mostrar_cliente`('.$user.');');
         return view('perfilCliente', [ "clientes" => $clientes ]);
     }
 

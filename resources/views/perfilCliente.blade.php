@@ -53,7 +53,66 @@
 		<a href="perfilClienteVehiculo">	<button   class="sim-btn hvr-bounce-to-top">Ver vehículos</button> </a>
 		</div>
 
-		
+		<table id="" class="table table-striped table-bordered" cellspacing="0" width="100%">
+			<thead>
+				<tr>
+					<th>Código del Cliente</th>
+					<th>Nombre del Cliente</th>
+					<th>Correo</th>
+					<th>Editar/Eliminar</th>
+					
+				</tr>
+			</thead>
+			<tbody>
+				@forelse ($clientes as $cliente)
+					<tr>
+						<td>{{$cliente->id}}</td>
+						<td>{{$cliente->name}}</td>
+						<td>{{$cliente->email}}</td>
+						<td>
+							<button data-toggle="modal" data-target="#modalEditarCliente{{ $cliente->id }}" 
+							class="button--save datatable-button fa-edit"></button>
+						</td>
+					</tr>
+	
+					<div id="modalEditarCliente{{ $cliente->id }}" class="modal modal-top fade">
+						<div class="modal-dialog modal-dialog-centered">
+							<div class="modal-content">
+								<form id="add-event" method="POST" action="{{ url('/perfilCliente/'.$cliente->id) }}">
+									@csrf
+									{{ @method_field('PATCH') }}
+									<div class="modal-body">
+										<div class="form-group">
+											<label>Identificador</label>
+											<input type="text" class="form-control" name="Id" value="{{$cliente->id}}" readonly>
+										</div>
+										<div class="form-group">
+											<label>Nombre</label>
+											<input type="text" class="form-control" name="Nombre" value="{{$cliente->name}}">
+										</div>
+										<div class="form-group">
+											<label>Correo</label>
+											<input type="text" class="form-control" name="Correo" value="{{$cliente->email}}">
+										</div>
+										<div class="form-group">
+											<label>Contraseña</label>
+											<input type="text" class="form-control" name="Clave">
+										</div>
+									</div>
+									<div class="modal-footer">
+										<button type="submit" class="btn btn-primary">Guardar</button>
+										<button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+									</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				@empty
+						No hay datos que mostrar.			
+				@endforelse
+			</tbody>
+		</table>
 
 
 

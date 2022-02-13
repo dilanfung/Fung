@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use DB;
 use App\Models\perfilAdmin;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class perfilAdminController extends Controller
 {
@@ -17,8 +18,8 @@ class perfilAdminController extends Controller
     {
         //
 
-       
-        $clientes = DB::select('CALL `fungdb`.`mostrar_clientes`();');
+        $user=Auth::user()->id;
+        $clientes = DB::select('CALL `fungdb`.`mostrar_cliente`('.$user.');');
         return view('perfilAdmin', [ "clientes" => $clientes ]);
     }
 
