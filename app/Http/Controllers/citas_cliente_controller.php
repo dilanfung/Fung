@@ -20,13 +20,30 @@ class citas_cliente_controller extends Controller
      */
     public function index()
     {
-        //$usuario->session()->get('id'); 
         $usuario = Auth::user()->id; 
-        $usuario2 = Auth::user()->id;
-        //->paginate(20); //resolver lo de la paginacion
         $citas = DB::select('CALL `fungdb`.`mostrar_cita`('.$usuario.');');
         $vehiculos = DB::select('CALL `fungdb`.`mostrar_vehiculo_usuario`('.$usuario.');');
-        return view('citasCliente', [ "citas" => $citas, "vehiculos" => $vehiculos, "usuario" =>$usuario,"usuario2" =>$usuario2 ]);
+        $eventos = array();
+        //->paginate(20); //resolver lo de la paginacion
+
+        foreach($citas as $cita) {
+            $eventos[] = [
+                'title' => $cita->id,
+                'description' => 'Para más información, revisar la lista de citas.',
+                'start' => date('Y-m-d H:i:s', str_replace(" ", "T", strtotime($cita->fecha))),
+                'end' => date('Y-m-d H:i:s', str_replace(" ", "T", strtotime($cita->fecha." +1 hour"))),
+                'className' => 'fc-bg-deepskyblue',
+                'icon' => 'cog',
+                'allDay'=> 'false'
+            ];
+        }
+
+        return view('citasCliente', [ 
+            "citas" => $citas, 
+            "vehiculos" => $vehiculos, 
+            "usuario" =>$usuario,
+            "eventos" =>$eventos 
+        ]);
     }
 
     /**

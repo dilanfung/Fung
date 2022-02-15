@@ -18,7 +18,26 @@ class citas_admin_controller extends Controller
         $citas = DB::select('CALL `fungdb`.`mostrar_todos_cita`();');
         $vehiculos = DB::select('CALL `fungdb`.`mostrar_todos_vehiculo`();');
         $usuarios = DB::select('CALL `fungdb`.`mostrar_clientes`();');
-        return view('citasAdmin', [ "citas" => $citas, "vehiculos" => $vehiculos, "usuarios" => $usuarios ]);
+        $eventos = array();
+
+        foreach($citas as $cita) {
+            $eventos[] = [
+                'title' => 'ID: '.$cita->id,
+                'description' => 'Para más información, revisar la lista de citas.',
+                'start' => date('Y-m-d H:i:s', str_replace(" ", "T", strtotime($cita->fecha))),
+                'end' => date('Y-m-d H:i:s', str_replace(" ", "T", strtotime($cita->fecha." +1 hour"))),
+                'className' => 'fc-bg-deepskyblue',
+                'icon' => 'cog',
+                'allDay'=> 'false'
+            ];
+        }
+
+        return view('citasAdmin', [ 
+            "citas" => $citas, 
+            "vehiculos" => $vehiculos, 
+            "usuarios" => $usuarios,
+            "eventos" => $eventos 
+        ]);
     }
 
     /**

@@ -80,12 +80,12 @@
 								<div class="modal-body">
 									<div class="form-group">
 										<label>Fecha</label>
-										<input type="date" class="form-control" name="Fecha" id="Fecha" 
+										<input type="date" class="form-control" name="Fecha" id="Fecha" required
 											min="{{ date('Y-m-d', strtotime(Carbon\Carbon::now())) }}">
 									</div>
 									<div class="form-group">
 										<label>Hora</label>
-										<input type="time" class="form-control" name="Hora" id="Hora">
+										<input type="time" class="form-control" name="Hora" id="Hora" required>
 									</div>
 									<div class="form-group">
 										<label>Usuario</label>
@@ -124,12 +124,12 @@
 					<div class="modal-body">
 						<div class="form-group">
 							<label>Fecha</label>
-							<input type="date" class="form-control" name="Fecha" id="Fecha" 
+							<input type="date" class="form-control" name="Fecha" id="Fecha" required
 								min="{{ date('Y-m-d', strtotime(Carbon\Carbon::now())) }}">
 						</div>
 						<div class="form-group">
 							<label>Hora</label>
-							<input type="time" class="form-control" name="Hora" id="Hora">
+							<input type="time" class="form-control" name="Hora" id="Hora" required>
 						</div>
 						<div class="form-group">
 							<label>Usuario</label>
@@ -154,4 +154,10 @@
 			</div>
 		</div>
 	</div>
+
+	<script>
+		(function(){
+  			cal(@json($eventos));
+		})()
+	</script>
 @endsection
