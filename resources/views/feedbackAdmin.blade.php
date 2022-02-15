@@ -5,7 +5,6 @@
 @section('contenido')
 	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
-
 	<div class="section-title text-center">
 		<br><H3>Retroalimentaciones dadas por los usuarios</H3>
 	</div>
@@ -13,26 +12,48 @@
     <table class="table table-striped">
 		<thead>
 			<tr>
-				<th scope="col">#</th>
-				<th scope="col">Comentarios/Retroalimentaciones</th>
+				<th scope="col">ID</th>
+				<th scope="col">Tipo</th>
+				<th scope="col">Fecha</th>
+				<th scope="col">Usuario</th>
+				<th scope="col">Detalles</th>
 			</tr>
 		</thead>
+
 		<tbody>
-			<tr>
-				<th scope="row">1</th>
-				<td>Excelente servicio</td>
-				<td><a data-toggle="modal" data-target="#modalInfo">Ver más detalles</a></td>
-			</tr>
-			<tr>
-				<th scope="row">2</th>
-				<td>Buen servicio</td>
-				<td><a data-toggle="modal" data-target="#modalInfo">Ver más detalles</a></td>
-			</tr>
-			<tr>
-				<th scope="row">3</th>
-				<td>La velocidad de reparacion de mi vehiculo fue maravillosa!</td>
-				<td><a data-toggle="modal" data-target="#modalInfo">Ver más detalles</a></td>
-			</tr>
+			@forelse($retroalimentaciones as $retroalimentacion)
+				<tr>
+					<td scope="row">{{ $retroalimentacion->id }}</td>
+					<td>{{ $retroalimentacion->fecha }}</td>
+					<td>{{ $retroalimentacion->usuario_nombre }}</td>
+					<td>{{ $retroalimentacion->categoria_rtr_nombre }}</td>
+					<td style="text-align: left;">
+						<a data-toggle="modal" data-target="#modalInfo{{ $retroalimentacion->id }}">
+							Ver más detalles
+						</a>
+					</td>
+				</tr>
+
+				<div id="modalInfo{{ $retroalimentacion->id }}" class="modal modal-top fade">
+					<div class="modal-dialog modal-dialog-centered">
+						<div class="modal-content">
+							<form id="add-event">
+								<div class="modal-body">
+									Correo de contacto: {{ $retroalimentacion->usuario_correo }} <br>
+									<br>
+									Mensaje:<br>
+									{{ $retroalimentacion->mensaje }}
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			@empty
+				No hay encuestas que mostrar.
+			@endforelse
 		</tbody>
 	</table>
 
@@ -43,6 +64,7 @@
 	</div>
 
 	<br>
+
 	@forelse($preguntas as $pregunta)
 		<div class="section-title text-center">
 			<br><H5>{{ $pregunta->pregunta }}</H5>
@@ -74,17 +96,4 @@
 	@empty
 		No hay encuestas que mostrar.
 	@endforelse
-
-	<div id="modalInfo" class="modal modal-top fade">
-		<div class="modal-dialog modal-dialog-centered">
-			<div class="modal-content">
-				<form id="add-event">
-					<div class="modal-body">Más detalles...</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
 @endsection
