@@ -83,12 +83,12 @@
 								<div class="modal-body">
 									<div class="form-group">
 										<label>Fecha</label>
-										<input type="date" class="form-control" name="Fecha" id="Fecha" required
-											min="{{ date('Y-m-d', strtotime(Carbon\Carbon::now())) }}">
+										<input type="date" class="form-control" name="Fecha" id="Fecha" value="{{ date('Y-m-d', strtotime($cita->fecha)) }}"
+											min="{{ date('Y-m-d', strtotime(Carbon\Carbon::now())) }}" required>
 									</div>
 									<div class="form-group">
 										<label>Hora</label>
-										<input type="time" class="form-control" name="Hora" id="Hora" required>
+										<input type="time" class="form-control" name="Hora" id="Hora" value="{{ date('H:i:s', strtotime($cita->fecha)) }}" required>
 									</div>
 									<div class="form-group">
 										<label>Usuario</label>
