@@ -17,14 +17,17 @@ class SoloUser
      */
     public function handle(Request $request, Closure $next)
     {
-        switch(auth::user()->tipo){
-            case ('1'):
-                return redirect('home');//si es administrador redirige al HOME
-            break;
-			case('2'):
-                return $next($request);// si es un usuario continua ruta USER
-			break;	
-           
+        try {
+            switch(auth::user()->tipo) {
+                case ('1'):
+                    return redirect('home');//si es administrador redirige al HOME
+                    break;
+                case('2'):
+                    return $next($request);// si es un usuario continua ruta USER
+                    break;
+            }
+        } catch (\Exception $e) {
+            return redirect('index');
         }
     }
 }

@@ -19,12 +19,17 @@ class SoloAdmin
      */
     public function handle(Request $request, Closure $next)
     {
-        switch(auth::user()->tipo){
-            case ('1'):
-                return $next($request);//si es administrador continua al HOME
-            break;
-			case('2'):
-                return redirect('user');// si es un usuario normal redirige a la ruta USER
-			break;	
+        try {
+            switch(auth::user()->tipo){
+                case ('1'):
+                    return $next($request);//si es administrador continua al HOME
+                    break;
+                case('2'):
+                    return redirect('user');// si es un usuario normal redirige a la ruta USER
+                    break;	
+            }
+        } catch (\Exception $e) {
+            return redirect('index');
         }
-    }}
+    }
+}

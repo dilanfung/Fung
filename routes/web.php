@@ -11,7 +11,6 @@ Route::view('/indexAdmin', 'indexAdmin')->name('indexAdmin');
 Route::view('/indexCliente', 'indexCliente')->name('indexCliente');
 Route::resource('home', 'HomeController'); 
 Route::resource('user', 'UserController');
-//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::resource('CitasAdmin', 'citas_admin_controller')->middleware('soloadmin'); 
 Route::resource('CitasCliente', 'citas_cliente_controller')->middleware('solouser');
@@ -32,28 +31,6 @@ Route::resource('feedbackCliente', 'feedbackClienteController')->middleware('sol
 Route::resource('articulos', 'ArticuloController') ->middleware('soloadmin');
 Route::resource('retroalimentacion', 'retroalimentacionController') ->middleware('soloadmin');
 Route::get('/encuestaSatisfaccionCliente', [App\Http\Controllers\encuestaController::class, 'index'])->name('encuestaSatisfaccionCliente');
-
-/*use App\Http\Controllers\clientesAdminController;
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the 'web' middleware group. Now create something great!
-|
-$clientesAdminV = DB::table('usuario')->get();
-
-
-Route ::get('/clientesAdmin', clientesAdminController::class, 'index');
-
-Route::get('/', function () {
-    return view('clientesAdmin');
-});
-
-Route::view('/clientesAdmin','clientesAdmin',compact('clientesAdminV'));
-Route ::get('/clientesAdmin', clientesAdminController::class, 'index');
-*/
 
 
 
