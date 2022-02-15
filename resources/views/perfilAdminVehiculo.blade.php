@@ -53,37 +53,37 @@
 									<div class="modal-body">
 										<div class="form-group">
 											<label>ID</label>
-											<input type="text" class="form-control"  name="id" value="{{ old('id', $vehiculo->id) }}" readonly disabled />
+											<input type="text" class="form-control"  name="id" value="{{ $vehiculo->id }}" readonly disabled />
 										</div>
 				
 										<div class="form-group">
 											<label>Nombre del propietario</label>
-											<input type="text" class="form-control"  name="placa" value="{{ old('placa', $vehiculo->usuario_nombre) }}" readonly disabled/>
+											<input type="text" class="form-control"  name="placa" value="{{ $vehiculo->usuario_nombre }}" readonly disabled/>
 										</div>
 				
 										<div class="form-group">
 											<label>Año</label>
-											<input type="text" class="form-control"  name="anio" value="{{ old('anio', $vehiculo->anio) }}" required />
+											<input type="text" class="form-control"  name="anio" value="{{ $vehiculo->anio }}" required />
 										</div>
 				
 										<div class="form-group">
 											<label>Cilindrada</label>
-											<input type="text" class="form-control"  name="cilindraje_motor" value="{{ old('cilindraje_motor', $vehiculo->cilindraje_motor) }}" required />
+											<input type="text" class="form-control"  name="cilindraje_motor" value="{{ $vehiculo->cilindraje_motor }}" required />
 										</div>
 				
 										<div class="form-group">
 											<label>Marca</label>
-											<input type="text" class="form-control"  name="marca" value="{{ old('marca', $vehiculo->marca) }}" required />
+											<input type="text" class="form-control"  name="marca" value="{{ $vehiculo->marca }}" required />
 										</div>
 										
 										<div class="form-group">
 											<label>Modelo</label>
-											<input type="text" name="modelo"class="form-control"   value="{{ old('modelo', $vehiculo->modelo) }}" required />
+											<input type="text" name="modelo"class="form-control"   value="{{ $vehiculo->modelo }}" required />
 										</div>
 				
 										<div class="form-group">
 											<label>Placa</label>
-											<input type="text" class="form-control"  name="placa" value="{{ old('placa', $vehiculo->placa) }}" required />
+											<input type="text" class="form-control"  name="placa" value="{{ $vehiculo->placa }}" required />
 										</div>
 				
 										<div class="modal-footer">

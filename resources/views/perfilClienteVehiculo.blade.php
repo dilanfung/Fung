@@ -45,29 +45,29 @@
 									<div class="modal-body">
 										<div class="form-group">
 											<label>ID</label>
-											<input type="text" class="form-control"  name="id" value="{{ old('id', $vehiculo->id) }}" readonly disabled />
+											<input type="text" class="form-control"  name="id" value="{{ $vehiculo->id }}" readonly disabled />
 										</div>										
 
 										<div class="form-group">
 											<label>Año</label>
-											<input type="text" class="form-control" name="anio" id="anio" value="{{ old('anio', $vehiculo->anio) }}" required>
+											<input type="text" class="form-control" name="anio" id="anio" value="{{ $vehiculo->anio }}" required>
 										</div>
 										<div class="form-group">
 											<label>Cilindrada</label>
 											<input type="text" class="form-control" name="cilindraje_motor" id="cilindraje_motor" 
-												value="{{ old('cilindraje_motor', $vehiculo->cilindraje_motor) }}" required>
+												value="{{ $vehiculo->cilindraje_motor }}" required>
 										</div>
 										<div class="form-group">
 											<label>Marca</label>
-											<input type="text" class="form-control" name="marca" id="marca" value="{{ old('marca', $vehiculo->marca) }}" required>
+											<input type="text" class="form-control" name="marca" id="marca" value="{{ $vehiculo->marca }}" required>
 										</div>
 										<div class="form-group">
 											<label>Modelo</label>
-											<input type="text" class="form-control" name="modelo" id="modelo" value="{{ old('modelo', $vehiculo->modelo) }}" required>
+											<input type="text" class="form-control" name="modelo" id="modelo" value="{{ $vehiculo->modelo }}" required>
 										</div>
 										<div class="form-group">
 											<label>Placa</label>
-											<input type="text" class="form-control" name="placa" id="placa" value="{{ old('placa', $vehiculo->placa) }}" required>
+											<input type="text" class="form-control" name="placa" id="placa" value="{{ $vehiculo->placa }}" required>
 										</div>
 										<div class="modal-footer">
 											<button type="submit" class="btn btn-primary" >Guardar</button>
