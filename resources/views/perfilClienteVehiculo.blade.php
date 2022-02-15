@@ -16,8 +16,8 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr>
-				@forelse($vehiculos as $vehiculo)
+			@forelse($vehiculos as $vehiculo)
+				<tr>
 					<td>{{$vehiculo->id}}</td>
 					<td>{{$vehiculo->anio}}</td>
 					<td>{{$vehiculo->cilindraje_motor}}</td>
@@ -35,6 +35,7 @@
 							<button onclick="return confirm('¿Esta seguro que desea eliminar este vehiculo?')" class="button--delete datatable-button fa-trash"></button>
 						</form>
 					</td>
+
 					<div id="modalEditarVehiculo{{$vehiculo->id}}" class="modal modal-top fade">
 						<div class="modal-dialog modal-dialog-centered">
 							<div class="modal-content">
@@ -42,36 +43,30 @@
 									@csrf
 									{{ @method_field('PATCH') }}
 									<div class="modal-body">
-										
 										<div class="form-group">
-											<label>ID Vehículo</label>
-											<select class="form-control"  id="id" name="id">
-												@forelse($vehiculos as $vehiculo)
-													<option value="{{$vehiculo->id}}">{{$vehiculo->id}}</option>
-												@empty
-													No hay carros disponibles.
-												@endforelse
-											</select>
-										</div>
+											<label>ID</label>
+											<input type="text" class="form-control"  name="id" value="{{ old('id', $vehiculo->id) }}" readonly disabled />
+										</div>										
+
 										<div class="form-group">
 											<label>Año</label>
-											<input type="text" class="form-control" name="anio" id="anio">
+											<input type="text" class="form-control" name="anio" id="anio" value="{{ old('anio', $vehiculo->anio) }}">
 										</div>
 										<div class="form-group">
 											<label>Cilindrada</label>
-											<input type="text" class="form-control" name="cilindraje_motor" id="cilindraje_motor">
+											<input type="text" class="form-control" name="cilindraje_motor" id="cilindraje_motor" value="{{ old('cilindraje_motor', $vehiculo->cilindraje_motor) }}">
 										</div>
 										<div class="form-group">
 											<label>Marca</label>
-											<input type="text" class="form-control" name="marca" id="marca">
+											<input type="text" class="form-control" name="marca" id="marca" value="{{ old('marca', $vehiculo->marca) }}">
 										</div>
 										<div class="form-group">
 											<label>Modelo</label>
-											<input type="text" class="form-control" name="modelo" id="modelo">
+											<input type="text" class="form-control" name="modelo" id="modelo" value="{{ old('modelo', $vehiculo->modelo) }}">
 										</div>
 										<div class="form-group">
 											<label>Placa</label>
-											<input type="text" class="form-control" name="placa" id="placa">
+											<input type="text" class="form-control" name="placa" id="placa" value="{{ old('placa', $vehiculo->placa) }}">
 										</div>
 										<div class="modal-footer">
 											<button type="submit" class="btn btn-primary" >Guardar</button>
