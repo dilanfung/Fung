@@ -28,7 +28,7 @@ class citas_cliente_controller extends Controller
 
         foreach($citas as $cita) {
             $eventos[] = [
-                'title' => $cita->id,
+                'title' => 'ID: '.$cita->id,
                 'description' => 'Para más información, revisar la lista de citas.',
                 'start' => date('Y-m-d H:i:s', str_replace(" ", "T", strtotime($cita->fecha))),
                 'end' => date('Y-m-d H:i:s', str_replace(" ", "T", strtotime($cita->fecha." +1 hour"))),
