@@ -29,6 +29,6 @@ class encuestaController extends Controller
         $preg3='3';
         DB::select('CALL `fungdb`.`crear_RespEncuesta`('.$preg3.',' .$user. ','.$request->input('rating-star3').');');
 
-        return redirect()->route('indexCliente');
+        return redirect()->route('feedbackCliente');
     }
 }
