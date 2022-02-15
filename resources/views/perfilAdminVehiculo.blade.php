@@ -63,27 +63,27 @@
 				
 										<div class="form-group">
 											<label>Año</label>
-											<input type="text" class="form-control"  name="anio" value="{{ old('anio', $vehiculo->anio) }}" />
+											<input type="text" class="form-control"  name="anio" value="{{ old('anio', $vehiculo->anio) }}" required />
 										</div>
 				
 										<div class="form-group">
 											<label>Cilindrada</label>
-											<input type="text" class="form-control"  name="cilindraje_motor" value="{{ old('cilindraje_motor', $vehiculo->cilindraje_motor) }}" />
+											<input type="text" class="form-control"  name="cilindraje_motor" value="{{ old('cilindraje_motor', $vehiculo->cilindraje_motor) }}" required />
 										</div>
 				
 										<div class="form-group">
 											<label>Marca</label>
-											<input type="text" class="form-control"  name="marca" value="{{ old('marca', $vehiculo->marca) }}" />
+											<input type="text" class="form-control"  name="marca" value="{{ old('marca', $vehiculo->marca) }}" required />
 										</div>
 										
 										<div class="form-group">
 											<label>Modelo</label>
-											<input type="text" name="modelo"class="form-control"   value="{{ old('modelo', $vehiculo->modelo) }}" />
+											<input type="text" name="modelo"class="form-control"   value="{{ old('modelo', $vehiculo->modelo) }}" required />
 										</div>
 				
 										<div class="form-group">
 											<label>Placa</label>
-											<input type="text" class="form-control"  name="placa" value="{{ old('placa', $vehiculo->placa) }}" />
+											<input type="text" class="form-control"  name="placa" value="{{ old('placa', $vehiculo->placa) }}" required />
 										</div>
 				
 										<div class="modal-footer">

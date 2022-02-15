@@ -1,3 +1,5 @@
+<!-- El formato es muy malo como para intentarlo arreglar sin el riesgo de que deje de funcionar -->
+
 <!DOCTYPE html>
 <html lang="en" >
 <head>
@@ -24,7 +26,7 @@
               <div class="rating">
                 <input type="radio" value = '1' name="rating-star" class="rating__control screen-reader" id="rc1">
                 <input type="radio" value = '2' name="rating-star" class="rating__control screen-reader" id="rc2">
-                <input type="radio" value = '3' name="rating-star" class="rating__control screen-reader" id="rc3">
+                <input type="radio" value = '3' name="rating-star" class="rating__control screen-reader" id="rc3" checked>
                 <input type="radio" value = '4' name="rating-star" class="rating__control screen-reader" id="rc4">
                 <input type="radio" value = '5' name="rating-star" class="rating__control screen-reader" id="rc5">
                 <label for="rc1" class="rating__item">

@@ -12,47 +12,50 @@
     <div class="container">
 
       <div class="forms-container"> 
-        <div class="signin-signup"> 
+        <div class="signin-signup">
+
           <form action="#" class="sign-in-form"> 
             <h2 class="title">Ingresar</h2> 
             <div class="input-field"> 
               <i class="fas fa-user"></i> 
-              <input type="text" placeholder="Nombre" /> 
+              <input type="text" placeholder="Nombre" required /> 
             </div> 
             <div class="input-field"> 
               <i class="fas fa-lock"></i> 
-              <input type="password" placeholder="Contraseña" /> 
+              <input type="password" placeholder="Contraseña" required/> 
             </div> 
             <input type="submit" value="Ingresar" class="btn solid"  />
             <a style="color: white" href="indexCliente.html">Ingresar como cliente</a>
             <a style="color: white" href="indexAdmin.html">Ingresar como administrador</a>
-          </form> 
+          </form>
+
           <form action="#" class="sign-up-form"> 
             <h2 class="title">Registrarse</h2> 
             <div class="input-field"> 
               <i class="fas fa-user"></i> 
-              <input type="text" placeholder="Nombre" /> 
+              <input type="text" placeholder="Nombre" required /> 
             </div> 
             <div class="input-field"> 
               <i class="fas fa-user"></i> 
-              <input type="text" placeholder="Apellidos" /> 
+              <input type="text" placeholder="Apellidos" required /> 
             </div> 
             <div class="input-field"> 
               <i class="fas fa-user"></i> 
-              <input type="text" placeholder="Teléfono" /> 
+              <input type="text" placeholder="Teléfono" required /> 
             </div> 
             <div class="input-field"> 
               <i class="fas fa-envelope"></i> 
-              <input type="email" placeholder="Correo" /> 
+              <input type="email" placeholder="Correo" required /> 
             </div> 
             <div class="input-field"> 
               <i class="fas fa-lock"></i> 
-              <input type="password" placeholder="Contraseña" /> 
+              <input type="password" placeholder="Contraseña" required /> 
             </div> 
             <input type="submit" class="btn" value="Registrarse" href="indexAdmin.html" />
             <a style="color: white" href="indexCliente.html">Ingresar como cliente</a>
             <a style="color: white" href="indexAdmin.html">Ingresar como administrador</a>
-          </form> 
+          </form>
+
         </div> 
       </div> 
     

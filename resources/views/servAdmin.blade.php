@@ -52,22 +52,22 @@
 									<div class="form-group">
 										<label for="NombreServ">Nombre del servicio</label>
 										<input type="text" class="form-control" id="nombre" name="nombre" 
-										placeholder="" value="{{ $servicio->nombre }}">
+											placeholder="" value="{{ $servicio->nombre }}" required>
 									</div>
 									<div class="form-group">
 										<label for="DescServ">Descripción</label>
 										<input type="text" class="form-control" id="descripcion" name="descripcion" 
-										placeholder="" value="{{ $servicio->descripcion }}">
+											placeholder="" value="{{ $servicio->descripcion }}" required>
 									</div>
 									<div class="form-group">
 										<label for="precioEsti">Precio estimado</label>
 										<input type="text" class="form-control" id="costo" name="costo" 
-										placeholder="" value="{{ $servicio->costo }}">
+											placeholder="" value="{{ $servicio->costo }}" required>
 									</div>
 									<div class="form-group">
 										<label for="TiempoEsti">Tiempo estimado</label>
 										<input type="text" class="form-control" id="tiempo_estimado" name="tiempo_estimado" 
-										placeholder="" value="{{ $servicio->tiempo_estimado }}">
+											placeholder="" value="{{ $servicio->tiempo_estimado }}" required>
 									</div>
 								</div>
 								<div class="modal-footer">
@@ -93,21 +93,22 @@
 						<div class="form-group">
 							<label for="NombreServ">Nombre del servicio</label>
 							<input type="text" class="form-control" id="nombre" 
-							placeholder="Mecánica general" name="nombre">
+								placeholder="Mecánica general" name="nombre" required>
 						</div>
 						<div class="form-group">
 							<label for="DescServ">Descripción</label>
 							<input type="text" class="form-control" id="descripcion" 
-							placeholder="Este servicio consiste..." name="descripcion">						</div>
+								placeholder="Este servicio consiste..." name="descripcion" required>
+						</div>
 						<div class="form-group">
 							<label for="precioEsti">Precio estimado</label>
 							<input type="text" class="form-control" id="costo" 
-							placeholder="200,000 a 500,000" name="costo">
+								placeholder="200,000 a 500,000" name="costo" required>
 						</div>
 						<div class="form-group">
 							<label for="TiempoEsti">Tiempo estimado</label>
 							<input type="text" class="form-control" id="tiempo_estimado" 
-							placeholder="2 horas" name="tiempo_estimado">
+								placeholder="2 horas" name="tiempo_estimado" required>
 						</div>
 					</div>
 					<div class="modal-footer">

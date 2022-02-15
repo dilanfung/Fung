@@ -50,11 +50,11 @@
 							</div>
 							<div class="form-group">
 								<label>Nombre</label>
-								<input type="text" class="form-control" name="Nombre" value="{{$clientesAdminItem2->name}}">
+								<input type="text" class="form-control" name="Nombre" value="{{$clientesAdminItem2->name}}" required>
 							</div>
 							<div class="form-group">
 								<label>Correo</label>
-								<input type="text" class="form-control" name="Correo" value="{{$clientesAdminItem2->email}}">
+								<input type="text" class="form-control" name="Correo" value="{{$clientesAdminItem2->email}}" required>
 						</div>
 						<div class="modal-footer">
 							<button type="submit" class="btn btn-primary">Guardar</button>

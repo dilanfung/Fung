@@ -47,7 +47,7 @@
 							</div>
 							<div class="form-group">
 								<label>Nombre</label>
-								<input type="text" class="form-control" name="Nombre" value="{{ $categoriasProveedorItem2->nombre }}">
+								<input type="text" class="form-control" name="Nombre" value="{{ $categoriasProveedorItem2->nombre }}" required>
 							</div>
 						<div class="modal-footer">
 							<button type="submit" class="btn btn-primary">Guardar</button>
@@ -86,4 +86,4 @@
 		}
 	  }
 	}
-	</script>
+</script>

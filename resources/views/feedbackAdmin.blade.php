@@ -91,8 +91,8 @@
 						document.getElementById('piechart' + "{{ $pregunta->id }}"));
 					chart.draw(data, options);
 				}
-				</script>
-			</div>
+			</script>
+		</div>
 	@empty
 		No hay encuestas que mostrar.
 	@endforelse

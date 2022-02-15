@@ -30,7 +30,7 @@
                   
                   <div class="form-group">
                     <label for="mensaje">Mensaje</label>
-                    <textarea class="form-control" rows="5" id="mensaje" name="mensaje" maxlength="45"></textarea>
+                    <textarea class="form-control" rows="5" id="mensaje" name="mensaje" maxlength="45" required></textarea>
                   </div>
 
                   <div class="col-lg-12 text-center">

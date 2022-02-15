@@ -23,18 +23,6 @@ class perfilClienteController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-
-        return view ("perfilCliente.blade.php");
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -42,32 +30,8 @@ class perfilClienteController extends Controller
      */
     public function store(Request $request)
     {
-        //
-
         perfilCliente::create($request->all());
         return view ("perfilCliente");
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\perfilCliente  $perfilCliente
-     * @return \Illuminate\Http\Response
-     */
-    public function show(perfilCliente $perfilCliente)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\perfilCliente  $perfilCliente
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(perfilCliente $perfilCliente)
-    {
-        //
     }
 
     /**
@@ -85,16 +49,5 @@ class perfilClienteController extends Controller
         $request->input('Apellidos').'","'.
         $request->input('Correo').'");');
         return redirect()->route('perfilCliente.index');
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\perfilCliente  $perfilCliente
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(perfilCliente $perfilCliente)
-    {
-        //
     }
 }

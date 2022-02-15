@@ -14,9 +14,8 @@
 			<tr>
 				<th>Código de la Retroalimentación</th>
 				<th>Mensaje</th>
-				<th>Codigo de usuario</th>
+				<th>Código de usuario</th>
 				<th>Fecha</th>
-				<th>Leida</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -26,8 +25,6 @@
 					<td>{{$retroalimentacion->mensaje}}</td>
 					<td>{{$retroalimentacion->usuario}}</td>
 					<td>{{$retroalimentacion->fecha}}</td>	
-					<td>{{$retroalimentacion->leida}}</td>	
-
 				</tr>
 			@empty
 					No hay datos que mostrar.			
@@ -36,7 +33,6 @@
 	</table>
 
 @endsection
-
 
 <script>
 	function myFunction() {
@@ -60,4 +56,4 @@
 		}
 	  }
 	}
-	</script>
+</script>

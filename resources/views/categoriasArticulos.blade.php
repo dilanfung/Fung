@@ -3,7 +3,6 @@
 @section('titulo','Categorías Articulos')
 
 @section('contenido')
-
 	<div id="modalCategoriaArticulos" class="modal modal-top fade">
 		<div class="modal-dialog modal-dialog-centered">
 			<div class="modal-content">
@@ -56,9 +55,7 @@
 		</tbody>
 	</table>
 				
-
 	@forelse ($categoriasArticulo as $categoriasArticulos2)
-
 		<div id="modalEditarCategoriaArticulo{{$categoriasArticulos2->id}}"" class="modal modal-top fade">
 			<div class="modal-dialog modal-dialog-centered">
 				<div class="modal-content">
@@ -72,7 +69,7 @@
 							</div>
 							<div class="form-group">
 								<label>Nombre</label>
-								<input type="text" class="form-control" name="Nombre" value="{{ $categoriasArticulos2->nombre }}">
+								<input type="text" class="form-control" name="Nombre" value="{{ $categoriasArticulos2->nombre }}" required>
 							</div>
 						<div class="modal-footer">
 							<button type="submit" class="btn btn-primary">Guardar</button>
@@ -87,8 +84,6 @@
 	@empty
 		No hay datos que mostrar.			
 	@endforelse
-
-
 @endsection
 
 
@@ -114,4 +109,4 @@
 		}
 	  }
 	}
-	</script>
+</script>

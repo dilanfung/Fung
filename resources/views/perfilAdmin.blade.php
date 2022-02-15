@@ -11,28 +11,25 @@
 					<div class="modal-body">
 						<div class="form-group">
 							<label>Año</label>
-							<input required autocomplete="off" name="anio" class="form-control"type="number" >
+							<input required autocomplete="off" name="anio" class="form-control"type="number" required>
 						</div>
 						<div class="form-group">
 							<label>Cilindrada</label>
-							<input type="text" required autocomplete="off" name="cilindraje_motor" class="form-control">
+							<input type="text" required autocomplete="off" name="cilindraje_motor" class="form-control" required>
 						</div>
 						<div class="form-group">
 							<label>Marca</label>
-							<input type="text" required autocomplete="off" name="marca" class="form-control">
+							<input type="text" required autocomplete="off" name="marca" class="form-control" required>
 						</div>
 						<div class="form-group">
 							<label>Modelo</label>
-							<input type="text" required autocomplete="off" name="modelo" class="form-control">
+							<input type="text" required autocomplete="off" name="modelo" class="form-control" required>
 						</div>
 						<div class="form-group">
 							<label>Placa</label>
-							<input type="text" required autocomplete="off" name="placa" class="form-control">
+							<input type="text" required autocomplete="off" name="placa" class="form-control" required>
 						</div>
-						<div class="form-group">
-							<label>Usuario</label>
-							<input type="int" required autocomplete="off" name="usuario" class="form-control">
-						</div>
+						<!--Enviar usuario-->
 					</div>
 					<div class="modal-footer">
 					<button class="btn btn-success">Guardar</button>
@@ -44,7 +41,7 @@
 	</div>
 
 	<div class="section-title text-center">
-		<br><h3>Vehiculos</h3>
+		<br><h3>Vehículos</h3>
 		<button data-toggle="modal" data-target="#modalVehiculo" class="sim-btn hvr-bounce-to-top">Crear vehículo</button>
 		<a href="perfilAdminVehiculo"><button class="sim-btn hvr-bounce-to-top">Ver vehículos</button></a>
 	</div>
@@ -84,15 +81,15 @@
 									</div>
 									<div class="form-group">
 										<label>Nombre</label>
-										<input type="text" class="form-control" name="Nombre" value="{{$cliente->name}}">
+										<input type="text" class="form-control" name="Nombre" value="{{$cliente->name}}" required>
 									</div>
 									<div class="form-group">
 										<label>Correo</label>
-										<input type="text" class="form-control" name="Correo" value="{{$cliente->email}}">
+										<input type="text" class="form-control" name="Correo" value="{{$cliente->email}}" required>
 									</div>
 									<div class="form-group">
 										<label>Contraseña</label>
-										<input type="text" class="form-control" name="Clave">
+										<input type="text" class="form-control" name="Clave" required>
 									</div>
 								</div>
 								<div class="modal-footer">
@@ -105,7 +102,7 @@
 					</div>
 				</div>
 			@empty
-					No hay datos que mostrar.			
+				No hay datos que mostrar.			
 			@endforelse
 		</tbody>
 	</table>
