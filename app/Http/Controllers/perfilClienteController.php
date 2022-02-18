@@ -16,9 +16,7 @@ class perfilClienteController extends Controller
      */
     public function index()
     {
-        //
-        $user=Auth::user()->id;
-        $clientes = DB::select('CALL `fungdb`.`mostrar_cliente`('.$user.');');
+        $clientes = DB::select('CALL `fungdb`.`mostrar_cliente`('.Auth::user()->id.');');
         return view('perfilCliente', [ "clientes" => $clientes ]);
     }
 
@@ -30,8 +28,16 @@ class perfilClienteController extends Controller
      */
     public function store(Request $request)
     {
-        perfilCliente::create($request->all());
-        return view ("perfilCliente");
+        //perfilCliente::create($request->all());
+        DB::select('CALL `fungdb`.`crear_vehiculo`('.
+            '"'.$request->input('placa').'", '.
+            '"'.$request->input('marca').'", '.
+            '"'.$request->input('cilindraje').'", '.
+            '"'.$request->input('modelo').'", '.
+            '"'.$request->input('anio').'", '.
+            Auth::user()->id.
+        ');');
+        return redirect()->route('perfilCliente.index');
     }
 
     /**
@@ -43,11 +49,13 @@ class perfilClienteController extends Controller
      */
     public function update(Request $request, $id)
     {
-        DB::select('CALL `fungdb`.`modificar_usuario`("'.
-        $request->input('Id').'","'.
-        $request->input('Nombre').'","'.
-        $request->input('Apellidos').'","'.
-        $request->input('Correo').'");');
+        DB::select('CALL `fungdb`.`modificar_usuario`('.
+            $id.', '.
+            '"'.$request->input('Nombre').'", '.
+            '"'.$request->input('Apellidos').'", '.
+            '"'.$request->input('Correo').'", '.
+            '"'.Hash::make($request->input('Clave')).'"'.
+        ');');
         return redirect()->route('perfilCliente.index');
     }
 }

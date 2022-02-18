@@ -11,25 +11,36 @@
 					<div class="modal-body">
 						<div class="form-group">
 							<label>Año</label>
-							<input required autocomplete="off" name="anio" class="form-control"type="number" required>
+							<input required autocomplete="off" name="anio" class="form-control" type="number" max="9999" required>
 						</div>
 						<div class="form-group">
 							<label>Cilindrada</label>
-							<input type="text" required autocomplete="off" name="cilindraje_motor" class="form-control" required>
+							<input type="text" required autocomplete="off" name="cilindraje" class="form-control" max="45" required>
 						</div>
 						<div class="form-group">
 							<label>Marca</label>
-							<input type="text" required autocomplete="off" name="marca" class="form-control" required>
+							<input type="text" required autocomplete="off" name="marca" class="form-control" max="45" required>
 						</div>
 						<div class="form-group">
 							<label>Modelo</label>
-							<input type="text" required autocomplete="off" name="modelo" class="form-control" required>
+							<input type="text" required autocomplete="off" name="modelo" class="form-control" max="45" required>
 						</div>
 						<div class="form-group">
 							<label>Placa</label>
-							<input type="text" required autocomplete="off" name="placa" class="form-control" required>
+							<input type="text" required autocomplete="off" name="placa" class="form-control" max="45" required>
 						</div>
-						<!--Enviar usuario-->
+						<div class="form-group">
+							<label>Usuario</label>
+							<select class="form-control" id="usuario" name="usuario">
+								@forelse($usuarios as $usuario)
+									<option value="{{$usuario->id}}">
+										{{$usuario->id}} - {{$usuario->name}}
+									</option>
+								@empty
+									No hay carros disponibles.
+								@endforelse
+							</select>
+						</div>
 					</div>
 					<div class="modal-footer">
 					<button class="btn btn-success">Guardar</button>
@@ -53,7 +64,6 @@
 				<th>Nombre del Cliente</th>
 				<th>Correo</th>
 				<th>Editar/Eliminar</th>
-				
 			</tr>
 		</thead>
 		<tbody>
@@ -81,15 +91,18 @@
 									</div>
 									<div class="form-group">
 										<label>Nombre</label>
-										<input type="text" class="form-control" name="Nombre" value="{{$cliente->name}}" required>
+										<input type="text" class="form-control" name="Nombre" value="{{$cliente->name}}" 
+											placeholder="Por favor escriba un nombre válido" required>
 									</div>
 									<div class="form-group">
 										<label>Correo</label>
-										<input type="text" class="form-control" name="Correo" value="{{$cliente->email}}" required>
+										<input type="text" class="form-control" name="Correo" value="{{$cliente->email}}" 
+											placeholder="Por favor escriba un correo válido" required>
 									</div>
 									<div class="form-group">
 										<label>Contraseña</label>
-										<input type="text" class="form-control" name="Clave" required>
+										<input type="text" class="form-control" name="Clave" 
+											placeholder="Por favor escriba su contraseña" required>
 									</div>
 								</div>
 								<div class="modal-footer">

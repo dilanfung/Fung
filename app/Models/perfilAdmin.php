@@ -10,5 +10,5 @@ class perfilAdmin extends Model
     use HasFactory;
 
     protected $table = "vehiculo";
-    protected $fillable = ["id","placa","marca", "cilindraje_motor", "modelo", "anio", "usuario"];
+    protected $fillable = ["id", "placa", "marca", "cilindraje_motor", "modelo", "anio", "usuario"];
 }

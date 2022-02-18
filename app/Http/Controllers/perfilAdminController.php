@@ -16,22 +16,10 @@ class perfilAdminController extends Controller
      */
     public function index()
     {
-        //
-
         $user=Auth::user()->id;
         $clientes = DB::select('CALL `fungdb`.`mostrar_cliente`('.$user.');');
-        return view('perfilAdmin', [ "clientes" => $clientes ]);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-        return view ("perfilAdmin.blade.php");
+        $usuarios = DB::select('CALL `fungdb`.`mostrar_clientes`();');
+        return view('perfilAdmin', [ "clientes" => $clientes, "usuarios" => $usuarios ]);
     }
 
     /**
@@ -42,38 +30,16 @@ class perfilAdminController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        //$perfilAdmin = new perfilAdmin($request->input());
-    //$perfilAdmin->saveOrFail();
-    //return redirect()->route("perfilesAdmin.perfilAdmin")->with(["mensaje" => "vehiculo guardado",   ]);
-    perfilAdmin::create($request->all());
-        return view ("perfilAdmin");
-        
-   
- 
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\perfilAdmin  $perfilAdmin
-     * @return \Illuminate\Http\Response
-     */
-    public function show(perfilAdmin $perfilAdmin)
-    {
-        //
-       
-    }   
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\perfilAdmin  $perfilAdmin
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(perfilAdmin $perfilAdmin)
-    {
-        //
+        //perfilAdmin::create($request->all());
+        DB::select('CALL `fungdb`.`crear_vehiculo`('.
+            '"'.$request->input('placa').'", '.
+            '"'.$request->input('marca').'", '.
+            '"'.$request->input('cilindraje').'", '.
+            '"'.$request->input('modelo').'", '.
+            '"'.$request->input('anio').'", '.
+            $request->input('usuario').
+        ');');
+        return redirect()->route('perfilAdmin.index');
     }
 
     /**
@@ -83,19 +49,15 @@ class perfilAdminController extends Controller
      * @param  \App\Models\perfilAdmin  $perfilAdmin
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, perfilAdmin $perfilAdmin)
+    public function update(Request $request, $id)
     {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\perfilAdmin  $perfilAdmin
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(perfilAdmin $perfilAdmin)
-    {
-        //
+        DB::select('CALL `fungdb`.`modificar_usuario`('.
+            $id.', '.
+            '"'.$request->input('Nombre').'", '.
+            '"'.$request->input('Apellidos').'", '.
+            '"'.$request->input('Correo').'", '.
+            '"'.Hash::make($request->input('Clave')).'"'.
+        ');');
+        return redirect()->route('perfilAdmin.index');
     }
 }

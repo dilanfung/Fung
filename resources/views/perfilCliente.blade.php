@@ -6,32 +6,33 @@
 	<div id="modalVehiculo" class="modal modal-top fade">
 		<div class="modal-dialog modal-dialog-centered">
 			<div class="modal-content">
-				<form method="POST" action="{{ route('perfilAdmin.store')}}" id="add-event">
+				<form method="POST" action="{{ route('perfilCliente.store')}}" id="add-event">
 					@csrf
 					<div class="modal-body">
 						<div class="form-group">
 							<label>Año</label>
-							<input autocomplete="off" name="anio" class="form-control" type="number" required>
+							<input autocomplete="off" name="anio" class="form-control" type="number" max="9999" required>
 						</div>
 						<div class="form-group">
 							<label>Cilindrada</label>
-							<input type="text" autocomplete="off" name="cilindraje_motor" class="form-control" required>
+							<input type="text" autocomplete="off" name="cilindraje" class="form-control" max="45" required>
 						</div>
 						<div class="form-group">
 							<label>Marca</label>
-							<input type="text" autocomplete="off" name="marca" class="form-control" required>
+							<input type="text" autocomplete="off" name="marca" class="form-control" max="45" required>
 						</div>
 						<div class="form-group">
 							<label>Modelo</label>
-							<input type="text" autocomplete="off" name="modelo" class="form-control" required>
+							<input type="text" autocomplete="off" name="modelo" class="form-control" max="45" required>
 						</div>
 						<div class="form-group">
 							<label>Placa</label>
-							<input type="text" autocomplete="off" name="placa" class="form-control" required>
+							<input type="text" autocomplete="off" name="placa" class="form-control" max="45" required>
 						</div>
 						<div class="form-group">
 							<label>Usuario</label>
-							<input type="int" autocomplete="off" name="usuario" class="form-control" required>
+							<input type="text" autocomplete="off" class="form-control" name="usuario" 
+								value="{{Auth::user()->id;}}" readonly>
 						</div>
 					</div>
 					<div class="modal-footer">
@@ -83,15 +84,18 @@
 									</div>
 									<div class="form-group">
 										<label>Nombre</label>
-										<input type="text" class="form-control" name="Nombre" value="{{$cliente->name}}" required>
+										<input type="text" class="form-control" name="Nombre" value="{{$cliente->name}}" 
+											placeholder="Por favor escriba un nombre válido" required>
 									</div>
 									<div class="form-group">
 										<label>Correo</label>
-										<input type="text" class="form-control" name="Correo" value="{{$cliente->email}}" required>
+										<input type="text" class="form-control" name="Correo" value="{{$cliente->email}}" 
+											placeholder="Por favor escriba un correo válido" required>
 									</div>
 									<div class="form-group">
 										<label>Contraseña</label>
-										<input type="text" class="form-control" name="Clave" required>
+										<input type="text" class="form-control" name="Clave" 
+											placeholder="Por favor escriba su contraseña" required>
 									</div>
 								</div>
 								<div class="modal-footer">

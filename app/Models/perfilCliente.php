@@ -10,5 +10,5 @@ class perfilCliente extends Model
     use HasFactory;
 
     protected $table = "vehiculo";
-    protected $fillable = ["placa","marca", "cilindraje_motor", "modelo", "anio", "usuario"];
+    protected $fillable = ["placa", "marca", "cilindraje_motor", "modelo", "anio", "usuario"];
 }
