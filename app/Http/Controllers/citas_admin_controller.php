@@ -22,7 +22,7 @@ class citas_admin_controller extends Controller
 
         foreach($citas as $cita) {
             $eventos[] = [
-                'title' => 'ID: '.$cita->id,
+                'title' => 'ID: '.$cita->id.' - '.$cita->usuario,
                 'description' => 'Para más información, revisar la lista de citas.',
                 'start' => date('Y-m-d H:i:s', str_replace(" ", "T", strtotime($cita->fecha))),
                 'end' => date('Y-m-d H:i:s', str_replace(" ", "T", strtotime($cita->fecha." +1 hour"))),
