@@ -13,8 +13,8 @@
 		<thead>
 			<tr>
 				<th scope="col">ID</th>
-				<th scope="col">Tipo</th>
 				<th scope="col">Fecha</th>
+				<th scope="col">Tipo</th>
 				<th scope="col">Usuario</th>
 				<th scope="col">Detalles</th>
 			</tr>
@@ -25,8 +25,8 @@
 				<tr>
 					<td scope="row">{{ $retroalimentacion->id }}</td>
 					<td>{{ $retroalimentacion->fecha }}</td>
-					<td>{{ $retroalimentacion->usuario_nombre }}</td>
 					<td>{{ $retroalimentacion->categoria_rtr_nombre }}</td>
+					<td>{{ $retroalimentacion->usuario_nombre }}</td>
 					<td style="text-align: left;">
 						<a data-toggle="modal" data-target="#modalInfo{{ $retroalimentacion->id }}">
 							Ver más detalles

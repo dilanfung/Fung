@@ -4,7 +4,7 @@
 
 @section('contenido')
 	<div class="section-title text-center">
-		<br><h3>Listado de categorias de proveedores</h3>
+		<br><h3>Listado de categorías de proveedores</h3>
 	</div>
 	
 	<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Buscar por nombre">
@@ -12,8 +12,8 @@
 	<table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
 		<thead>
 			<tr>
-				<th>Código de la categoria</th>
-				<th>Nombre de la categoria</th>
+				<th>Código de la categoría</th>
+				<th>Nombre de la categoría</th>
 				<th>Editar</th>
 			</tr>
 		</thead>

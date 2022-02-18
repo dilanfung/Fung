@@ -11,7 +11,7 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">Ver Articulo</span>
+                            <span class="card-title">Ver Artículo</span>
                         </div>
                         <div class="float-right">
                             <a class="btn btn-primary" href="{{ route('articulos.index') }}"> Atrás</a>
@@ -25,7 +25,7 @@
                             {{ $articulo->nombre }}
                         </div>
                         <div class="form-group">
-                            <strong>Categoria Articulo:</strong>
+                            <strong>Categoría del artículo:</strong>
                             {{ $articulo->categoria_articulo }}
                         </div>
                         <div class="form-group">

@@ -15,7 +15,7 @@
                           
                                 
                             <span id="card_title">
-                                {{ __('Articulos') }}
+                                {{ __('Artículos') }}
                             </span>
 
                              <div class="float-right">
@@ -40,8 +40,8 @@
                                     <tr>
                                         <th>No</th>
 										<th>Nombre</th>
-										<th>Categoria Articulo</th>
-										<th>Ubicacion</th>
+										<th>Categoría del artículo</th>
+										<th>Ubicación</th>
 										<th>Cantidad</th>
 										<th>Proveedor</th>
                                         <th></th>
