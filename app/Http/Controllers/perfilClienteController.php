@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use DB;
+use App\Http\Requests;
 use App\Models\perfilCliente;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class perfilClienteController extends Controller
 {
@@ -44,7 +46,7 @@ class perfilClienteController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\perfilCliente  $perfilCliente
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -52,7 +54,6 @@ class perfilClienteController extends Controller
         DB::select('CALL `fungdb`.`modificar_usuario`('.
             $id.', '.
             '"'.$request->input('Nombre').'", '.
-            '"'.$request->input('Apellidos').'", '.
             '"'.$request->input('Correo').'", '.
             '"'.Hash::make($request->input('Clave')).'"'.
         ');');

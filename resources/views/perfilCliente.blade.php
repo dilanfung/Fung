@@ -6,7 +6,7 @@
 	<div id="modalVehiculo" class="modal modal-top fade">
 		<div class="modal-dialog modal-dialog-centered">
 			<div class="modal-content">
-				<form method="POST" action="{{ route('perfilCliente.store')}}" id="add-event">
+				<form method="POST" action="{{ url('/perfilCliente')}}" id="add-event">
 					@csrf
 					<div class="modal-body">
 						<div class="form-group">

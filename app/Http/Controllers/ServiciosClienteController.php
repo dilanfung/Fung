@@ -16,6 +16,7 @@ class ServiciosClienteController extends Controller
     public function index()
     {
         $servicios = DB::select('CALL `fungdb`.`mostrar_servicios`');
-        return view('serviciosCliente', [ "servicios" => $servicios ]);
+        $promos = DB::select('CALL `fungdb`.`mostrar_promociones`');
+        return view('serviciosCliente', [ "servicios" => $servicios, "promos" => $promos ]);
     }
 }

@@ -6,7 +6,7 @@
 	<div id="modalVehiculo" class="modal modal-top fade">
 		<div class="modal-dialog modal-dialog-centered">
 			<div class="modal-content">
-				<form method="POST" action="{{ route('perfilAdmin.store')}}" id="add-event">
+				<form method="POST" action="{{ url('/perfilAdmin')}}" id="add-event">
 					@csrf
 					<div class="modal-body">
 						<div class="form-group">
@@ -81,7 +81,7 @@
 				<div id="modalEditarCliente{{ $cliente->id }}" class="modal modal-top fade">
 					<div class="modal-dialog modal-dialog-centered">
 						<div class="modal-content">
-							<form id="add-event" method="POST" action="{{ url('/perfilCliente/'.$cliente->id) }}">
+							<form id="add-event" method="POST" action="{{ url('/perfilAdmin/'.$cliente->id) }}">
 								@csrf
 								{{ @method_field('PATCH') }}
 								<div class="modal-body">
@@ -109,9 +109,8 @@
 									<button type="submit" class="btn btn-primary">Guardar</button>
 									<button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
 								</div>
-								</div>
-							</form>
-						</div>
+							</div>
+						</form>
 					</div>
 				</div>
 			@empty

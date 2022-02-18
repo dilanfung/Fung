@@ -1,9 +1,8 @@
 @extends('layoutAdmin')
 
-@section('titulo','Promociones')
+@section('titulo', 'Promociones')
 
 @section('contenido')
-
 	<div class="section-title text-center">
 		<br><h3>Mantenimiento de promociones</h3>
 		<button data-toggle="modal" data-target="#modalCrear" class="sim-btn hvr-bounce-to-top">Crear servicio en promocion</button>
@@ -61,7 +60,7 @@
 									</div>
 									<div class="form-group">
 										<label for="precioEsti">Precio estimado</label>
-										<input type="text" class="form-control" id="costo" name="costo" 
+										<input type="numeric" class="form-control" id="costo" name="costo" 
 											placeholder="" value="{{ $servicio->costo }}" required>
 									</div>
 									<div class="form-group">

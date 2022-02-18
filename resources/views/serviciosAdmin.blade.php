@@ -64,7 +64,7 @@
 									</div>
 									<div class="form-group">
 										<label for="precioEsti">Precio estimado</label>
-										<input type="text" class="form-control" id="costo" name="costo" 
+										<input type="numeric" class="form-control" id="costo" name="costo" 
 											placeholder="" value="{{ $servicio->costo }}" required>
 									</div>
 									<div class="form-group">

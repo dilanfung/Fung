@@ -33,7 +33,6 @@ class citas_cliente_controller extends Controller
                 'start' => date('Y-m-d H:i:s', str_replace(" ", "T", strtotime($cita->fecha))),
                 'end' => date('Y-m-d H:i:s', str_replace(" ", "T", strtotime($cita->fecha." +1 hour"))),
                 'className' => 'fc-bg-deepskyblue',
-                'icon' => 'cog',
                 'allDay'=> 'false'
             ];
         }
@@ -72,12 +71,11 @@ class citas_cliente_controller extends Controller
     public function update(Request $request, $id)
     {
         DB::select('CALL `fungdb`.`modificar_cita`('.
-        $id.',"'.
-        $request->input('Fecha').' '.$request->input('Hora').':00", '.
+        $id.', '.
+        '"'.$request->input('Fecha').' '.$request->input('Hora').'", '.
         $request->input('Usuario').','.
         $request->input('Vehiculo').');');
         return redirect()->route('CitasCliente.index');
-        //return response()->json($request);
     }
 
     /**
