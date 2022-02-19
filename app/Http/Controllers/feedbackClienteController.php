@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use DoctrineDBALDriverPDOConnection;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+use DoctrineDBALDriverPDOConnection;
 
 class feedbackClienteController extends Controller
 {
@@ -16,11 +17,10 @@ class feedbackClienteController extends Controller
 
     public function store(Request $request)
     {
-        //2 = usuario de ejemplo
         DB::select('CALL `fungdb`.`crear_retroalimentacion`('.
         $request->input('categoria_rtr').', '.
         '"'.$request->input('mensaje').'", '.
-        '2'.');');
+        Auth::user()->id.');');
         return redirect()->route('feedbackCliente.index');
     }
 }

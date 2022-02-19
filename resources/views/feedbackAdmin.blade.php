@@ -6,7 +6,7 @@
 	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
 	<div class="section-title text-center">
-		<br><H3>Retroalimentaciones dadas por los usuarios</H3>
+		<br><H2>Retroalimentaciones dadas por los usuarios</H2>
 	</div>
 
     <table class="table table-striped">
@@ -28,9 +28,9 @@
 					<td>{{ $retroalimentacion->categoria_rtr_nombre }}</td>
 					<td>{{ $retroalimentacion->usuario_nombre }}</td>
 					<td style="text-align: left;">
-						<a data-toggle="modal" data-target="#modalInfo{{ $retroalimentacion->id }}">
-							Ver más detalles
-						</a>
+						<button data-toggle="modal" data-target="#modalInfo{{ $retroalimentacion->id }}" 
+							class="button--save datatable-button fa-info">
+						</button>
 					</td>
 				</tr>
 
