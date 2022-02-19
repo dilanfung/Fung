@@ -117,6 +117,14 @@
 			</div>
 		</section>
 
+		<!-- ALERTS -->
+		@if (session('message'))
+			<div class="alert alert-{{ session('alert-type') }}">
+				{{ session('message') }}
+			</div>
+		@endif
+		<!-- ALERTS -->
+
 		@yield('contenido')
 
 		<div id="contact" class="section db text-align-center">

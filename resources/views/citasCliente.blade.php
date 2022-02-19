@@ -95,7 +95,11 @@
 										<label>Vehículo</label>
 										<select class="form-control" id="Vehiculo" name="Vehiculo">
 											@forelse($vehiculos as $vehiculo)
-												<option value="{{ $vehiculo->id }} ">{{ $vehiculo->placa }}</option>
+												<option value="{{ $vehiculo->id }}"
+													@if($vehiculo->id == $cita->vehiculo_id)
+														selected
+													@endif
+												>{{ $vehiculo->placa }}</option>
 											@empty
 												No hay carros disponibles.
 											@endforelse

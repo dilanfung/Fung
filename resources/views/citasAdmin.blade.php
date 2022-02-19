@@ -94,9 +94,11 @@
 										<label>Usuario</label>
 										<select class="form-control" id="Usuario" name="Usuario">
 											@forelse($usuarios as $usuario)
-												<option value="{{ $usuario->id }}">
-													{{ $usuario->name }} 
-												</option>
+												<option value="{{ $usuario->id }}"
+													@if($usuario->id == $cita->usuario_id)
+														selected
+													@endif
+												>{{ $usuario->name }} </option>
 											@empty
 												No hay carros disponibles.
 											@endforelse
@@ -106,7 +108,11 @@
 										<label>Vehiculo</label>
 										<select class="form-control" id="Vehiculo" name="Vehiculo">
 											@forelse($vehiculos as $vehiculo)
-												<option value="{{ $vehiculo->id }}">{{ $vehiculo->placa }}</option>
+												<option value="{{ $vehiculo->id }}"
+													@if($vehiculo->id == $cita->vehiculo_id)
+														selected
+													@endif
+												>{{ $vehiculo->placa }}</option>
 											@empty
 												No hay carros disponibles.
 											@endforelse

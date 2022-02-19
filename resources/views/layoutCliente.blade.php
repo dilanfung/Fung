@@ -23,14 +23,7 @@
 		<![endif]-->
 	</head>
 	<body id="page-top" class="politics_version">
-
-		<!-- LOADER -->
-		<div id="preloader">
-			<div id="main-ld">
-				<div id="loader"></div>  
-			</div>
-		</div><!-- end loader -->
-		<!-- END LOADER -->
+		<!-- LOADER --><div id="preloader"><div id="main-ld"><div id="loader"></div>  </div></div>
 		
 		<!-- Navigation -->
 		<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
@@ -71,6 +64,7 @@
 			  	</div>
 			</div>
 		</nav>
+		<!-- Navigation -->
 
 		<!-- JS -->
 		<script src="{{URL::asset('js/all.js')}}"></script>
@@ -100,6 +94,7 @@
 		<script src='https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js'></script>
 		<!-- JS -->
 		
+		<!-- BANNER -->
 		<section id="home" class="main-banner small-main-banner parallaxie"  style="background: url('../uploads/mecanica.jpg')" >
 			<div class="heading small-heading">
 				<h1></h1>
@@ -108,9 +103,19 @@
 				</h3>
 			</div>
 		</section>
+		<!-- BANNER -->
+
+		<!-- ALERTS -->
+		@if (session('message'))
+			<div class="alert alert-{{ session('alert-type') }}">
+				{{ session('message') }}
+			</div>
+		@endif
+		<!-- ALERTS -->
 
 		@yield('contenido')
 
+		<!-- FOOTER -->
 		<div id="contact" class="section db text-align-center">
 			<div class="section-title text-center">
 				<h3>Contacto</h3>
