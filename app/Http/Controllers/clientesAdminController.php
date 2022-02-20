@@ -18,7 +18,7 @@ class clientesAdminController extends Controller{
     
     public function update(Request $request, $id)
     {
-        DB::select('CALL `fungdb`.`modificar_usuario`("'.
+        DB::select('CALL `fungdb`.`modificar_usuario_admin`("'.
         $id.'","'.
         $request->input('name').'","'.
         $request->input('email').'");');
