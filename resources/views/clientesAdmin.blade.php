@@ -46,15 +46,15 @@
 						<div class="modal-body">
 							<div class="form-group">
 								<label>Identificador</label>
-								<input type="text" class="form-control" name="Id" value="{{$clientesAdminItem2->id}}" readonly>
+								<input type="text" class="form-control" name="id" value="{{$clientesAdminItem2->id}}" readonly>
 							</div>
 							<div class="form-group">
 								<label>Nombre</label>
-								<input type="text" class="form-control" name="Nombre" value="{{$clientesAdminItem2->name}}" required>
+								<input type="text" class="form-control" name="name" value="{{$clientesAdminItem2->name}}" required>
 							</div>
 							<div class="form-group">
 								<label>Correo</label>
-								<input type="text" class="form-control" name="Correo" value="{{$clientesAdminItem2->email}}" required>
+								<input type="text" class="form-control" name="email" value="{{$clientesAdminItem2->email}}" required>
 						</div>
 						<div class="modal-footer">
 							<button type="submit" class="btn btn-primary">Guardar</button>
