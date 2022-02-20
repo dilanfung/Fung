@@ -6,7 +6,7 @@
 	<div class="section-title text-center">
 		<br><h3>Mantenimiento de promociones</h3>
 		<button data-toggle="modal" data-target="#modalCrear" class="sim-btn hvr-bounce-to-top">Crear servicio en promocion</button>
-		<a href="serviciosAdmin"> <button class="sim-btn hvr-bounce-to-top">Volver atrás</button> </a>
+		<a href="promocionesAdmin"> <button class="sim-btn hvr-bounce-to-top">Volver atrás</button> </a>
 	</div>
 
 	<table id="" class="table table-bordered" cellspacing="0" width="100%">
@@ -44,7 +44,7 @@
 				<div id="modalEditar{{ $servicio->id }}" class="modal modal-top fade">
 					<div class="modal-dialog modal-dialog-centered">
 						<div class="modal-content">
-							<form method="POST" action="{{ url('/serviciosAdmin/'.$servicio->id) }}" id="add-event">
+							<form method="POST" action="{{ url('/promocionesAdmin/'.$servicio->id) }}" id="add-event">
 								@csrf
 								{{ @method_field('PATCH') }}
 								<div class="modal-body">
@@ -86,7 +86,7 @@
 	<div id="modalCrear" class="modal modal-top fade">
 		<div class="modal-dialog modal-dialog-centered">
 			<div class="modal-content">
-				<form method="POST" action="{{ url('/serviciosAdmin') }}" id="add-event">
+				<form method="POST" action="{{ url('/promocionesAdmin') }}" id="add-event">
 					@csrf
 					<div class="modal-body">
 						<div class="form-group">
