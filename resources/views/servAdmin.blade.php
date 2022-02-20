@@ -6,7 +6,7 @@
 	<div class="section-title text-center">
 		<br><h3>Mantenimiento de promociones</h3>
 		<button data-toggle="modal" data-target="#modalCrear" class="sim-btn hvr-bounce-to-top">Crear servicio en promocion</button>
-		<a href="promocionesAdmin"> <button class="sim-btn hvr-bounce-to-top">Volver atrás</button> </a>
+		<a href="serviciosAdmin"> <button class="sim-btn hvr-bounce-to-top">Volver atrás</button> </a>
 	</div>
 
 	<table id="" class="table table-bordered" cellspacing="0" width="100%">
