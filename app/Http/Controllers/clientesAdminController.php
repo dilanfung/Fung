@@ -20,8 +20,8 @@ class clientesAdminController extends Controller{
     {
         DB::select('CALL `fungdb`.`modificar_usuario`("'.
         $id.'","'.
-        $request->input('Nombre').'","'.
-        $request->input('Correo').'");');
+        $request->input('name').'","'.
+        $request->input('email').'");');
         return redirect()->route('clientesAdmin.index');
     }
 }
