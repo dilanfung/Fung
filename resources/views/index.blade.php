@@ -42,7 +42,7 @@
 					<b>RTV</b>
 				</span>
 				<div class="btn-ber">
-					<a class="get_btn hvr-bounce-to-top" href="{{ route('register') }}">Inicia sesión ó regístrate</a>
+					<a class="get_btn hvr-bounce-to-top" href="{{ route('login') }}">Inicia sesión ó regístrate</a>
 				</div>
 			</h3>
 		</div>
