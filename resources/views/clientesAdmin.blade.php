@@ -56,11 +56,6 @@
 								<label>Correo</label>
 								<input type="text" class="form-control" name="email" value="{{$clientesAdminItem2->email}}" required>
 							</div>
-							<div class="form-group">
-								<label>Contraseña</label>
-								<input type="text" class="form-control" name="password" 
-									placeholder="Por favor escriba la contraseña." required>
-							</div>
 							<div class="modal-footer">
 								<button type="submit" class="btn btn-primary">Guardar</button>
 								<button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>

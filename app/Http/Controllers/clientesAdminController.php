@@ -23,7 +23,6 @@ class clientesAdminController extends Controller{
                 $id.', '.
                 '"'.$request->input('name').'", '.
                 '"'.$request->input('email').'", '.
-                '"'.$request->input('password').'"'.
             ');');
         } catch (\Illuminate\Database\QueryException $e) {
             return redirect()->route('clientesAdmin.index')
