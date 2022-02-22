@@ -38,13 +38,15 @@ class perfilAdminVehiculoController extends Controller
                 "'.$request->input('modelo').'",
                 "'.$request->input('placa').
             '");');
-        } catch (\Illuminate\Database\QueryException $e) {
-            
-            ->with('alert_type', 'danger')->with('message', 'Uno de los valores no es válido, por favor llene todos los campos correctamente.');
-        }
-        return redirect()->route('perfilAdminVehiculo.index');
-        //return response()->json($request);
-    }
+            catch (\Illuminate\Database\QueryException $e) {
+                return redirect()->route('perfilCliente.index')
+                    ->with('alert_type', 'danger')->with('message', 'Uno de los valores no es válido, por favor llene todos los campos correctamente.');
+            }
+            return redirect()->route('perfilAdminVehiculo.index');
+            }
+
+
+
 
     /**
      * Remove the specified resource from storage.
