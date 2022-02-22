@@ -17,10 +17,17 @@ class feedbackClienteController extends Controller
 
     public function store(Request $request)
     {
-        DB::select('CALL `fungdb`.`crear_retroalimentacion`('.
-        $request->input('categoria_rtr').', '.
-        '"'.$request->input('mensaje').'", '.
-        Auth::user()->id.');');
+        try {
+            DB::select('CALL `fungdb`.`crear_retroalimentacion`('.
+                $request->input('categoria_rtr').', '.
+                '"'.$request->input('mensaje').'", '.
+                Auth::user()->id.
+            ');');
+        } catch (\Illuminate\Database\QueryException $e) {
+            return redirect()->route('feedbackCliente.index')
+                ->with('alert_type', 'danger')->with('message', 'Uno de los valores no es válido, por favor llene todos los campos correctamente.');
+        }
+        
         return redirect()->route('feedbackCliente.index');
     }
 }

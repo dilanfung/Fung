@@ -31,12 +31,19 @@ class servAdminController extends Controller
      */
     public function store(Request $request)
     {
-        DB::select('CALL `fungdb`.`crear_servicio`('.
-        '"'.$request->input('nombre').'", '.
-        '"'.$request->input('descripcion').'", '.
-        $request->input('costo').', '.
-        '1'.', '. // ¿Es promoción? Verdadero
-        '"'.$request->input('tiempo_estimado').'");');
+        try {
+            DB::select('CALL `fungdb`.`crear_servicio`('.
+                '"'.$request->input('nombre').'", '.
+                '"'.$request->input('descripcion').'", '.
+                $request->input('costo').', '.
+                '1'.', '. // ¿Es promoción? Verdadero
+                '"'.$request->input('tiempo_estimado').
+            '");');
+        } catch (\Illuminate\Database\QueryException $e) {
+            return redirect()->route('promocionesAdmin.index')
+                ->with('alert_type', 'danger')->with('message', 'Uno de los valores no es válido, por favor llene todos los campos correctamente.');
+        }
+
         return redirect()->route('promocionesAdmin.index');
     }
 
@@ -49,12 +56,18 @@ class servAdminController extends Controller
      */
     public function update(Request $request, $id)
     {
-        DB::select('CALL `fungdb`.`modificar_servicio`('.
-        $id.', '.
-        '"'.$request->input('nombre').'", '.
-        '"'.$request->input('descripcion').'", '.
-        $request->input('costo').', '.
-        '"'.$request->input('tiempo_estimado').'");');
+        try {
+            DB::select('CALL `fungdb`.`modificar_servicio`('.
+                $id.', '.
+                '"'.$request->input('nombre').'", '.
+                '"'.$request->input('descripcion').'", '.
+                $request->input('costo').', '.
+                '"'.$request->input('tiempo_estimado').
+            '");');
+        } catch (\Illuminate\Database\QueryException $e) {
+            return redirect()->route('promocionesAdmin.index')
+                ->with('alert_type', 'danger')->with('message', 'Uno de los valores no es válido, por favor llene todos los campos correctamente.');
+        }
         return redirect()->route('promocionesAdmin.index');
     }
 
@@ -70,6 +83,9 @@ class servAdminController extends Controller
             DB::select('call `fungdb`.`eliminar_servicio`('.$id.');');
         } catch (ModelNotFoundException $exception) {
             return back()->withError($exception->getMessage())->withInput();
+        } catch (\Illuminate\Database\QueryException $e) {
+            return redirect()->route('promocionesAdmin.index')
+                ->with('alert_type', 'danger')->with('message', 'No es posible eliminar.');
         }
         return redirect()->route('promocionesAdmin.index');
         //return response()->json($request);

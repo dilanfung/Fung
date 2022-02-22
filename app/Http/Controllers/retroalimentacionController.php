@@ -4,9 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
-
 use DB;
-
 
     /** 
      * 
@@ -30,10 +28,8 @@ use DB;
 
 class retroalimentacionController extends Controller{
 
-
     public function index()
     {
- 
         $retroalimentacion = DB::select('CALL `fungdb`.`mostrar_todos_retroalimentacion`();');
         return view('retroalimentacion', [ "retroalimentacion" => $retroalimentacion ]);
     }

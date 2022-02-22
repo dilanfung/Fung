@@ -55,11 +55,16 @@
 							<div class="form-group">
 								<label>Correo</label>
 								<input type="text" class="form-control" name="email" value="{{$clientesAdminItem2->email}}" required>
-						</div>
-						<div class="modal-footer">
-							<button type="submit" class="btn btn-primary">Guardar</button>
-							<button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
-						</div>
+							</div>
+							<div class="form-group">
+								<label>Contraseña</label>
+								<input type="text" class="form-control" name="password" 
+									placeholder="Por favor escriba la contraseña." required>
+							</div>
+							<div class="modal-footer">
+								<button type="submit" class="btn btn-primary">Guardar</button>
+								<button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+							</div>
 						</div>
 					</form>
 				</div>
@@ -72,25 +77,25 @@
 
 	<script>
 		function myFunction() {
-		  // Declare variables
-		  var input, filter, table, tr, td, i, txtValue;
-		  input = document.getElementById("myInput");
-		  filter = input.value.toUpperCase();
-		  table = document.getElementById("example");
-		  tr = table.getElementsByTagName("tr");
-		
-		  // Loop through all table rows, and hide those who don't match the search query
-		  for (i = 0; i < tr.length; i++) {
-			td = tr[i].getElementsByTagName("td")[1];
-			if (td) {
-			  txtValue = td.textContent || td.innerText;
-			  if (txtValue.toUpperCase().indexOf(filter) > -1) {
-				tr[i].style.display = "";
-			  } else {
-				tr[i].style.display = "none";
-			  }
+			// Declare variables
+			var input, filter, table, tr, td, i, txtValue;
+			input = document.getElementById("myInput");
+			filter = input.value.toUpperCase();
+			table = document.getElementById("example");
+			tr = table.getElementsByTagName("tr");
+			
+			// Loop through all table rows, and hide those who don't match the search query
+			for (i = 0; i < tr.length; i++) {
+				td = tr[i].getElementsByTagName("td")[1];
+				if (td) {
+					txtValue = td.textContent || td.innerText;
+					if (txtValue.toUpperCase().indexOf(filter) > -1) {
+						tr[i].style.display = "";
+					} else {
+						tr[i].style.display = "none";
+					}
+				}
 			}
-		  }
 		}
 	</script>
 @endsection

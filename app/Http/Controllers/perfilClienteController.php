@@ -30,15 +30,19 @@ class perfilClienteController extends Controller
      */
     public function store(Request $request)
     {
-        //perfilCliente::create($request->all());
-        DB::select('CALL `fungdb`.`crear_vehiculo`('.
-            '"'.$request->input('placa').'", '.
-            '"'.$request->input('marca').'", '.
-            '"'.$request->input('cilindraje').'", '.
-            '"'.$request->input('modelo').'", '.
-            '"'.$request->input('anio').'", '.
-            Auth::user()->id.
-        ');');
+        try {
+            DB::select('CALL `fungdb`.`crear_vehiculo`('.
+                '"'.$request->input('placa').'", '.
+                '"'.$request->input('marca').'", '.
+                '"'.$request->input('cilindraje').'", '.
+                '"'.$request->input('modelo').'", '.
+                '"'.$request->input('anio').'", '.
+                Auth::user()->id.
+            ');');
+        } catch (\Illuminate\Database\QueryException $e) {
+            return redirect()->route('perfilCliente.index')
+                ->with('alert_type', 'danger')->with('message', 'Uno de los valores no es válido, por favor llene todos los campos correctamente.');
+        }
         return redirect()->route('perfilCliente.index');
     }
 
@@ -51,12 +55,17 @@ class perfilClienteController extends Controller
      */
     public function update(Request $request, $id)
     {
-        DB::select('CALL `fungdb`.`modificar_usuario`('.
-            $id.', '.
-            '"'.$request->input('Nombre').'", '.
-            '"'.$request->input('Correo').'", '.
-            '"'.Hash::make($request->input('Clave')).'"'.
-        ');');
+        try {
+            DB::select('CALL `fungdb`.`modificar_usuario`('.
+                $id.', '.
+                '"'.$request->input('Nombre').'", '.
+                '"'.$request->input('Correo').'", '.
+                '"'.Hash::make($request->input('Clave')).'"'.
+            ');');
+        } catch (\Illuminate\Database\QueryException $e) {
+            return redirect()->route('perfilCliente.index')
+                ->with('alert_type', 'danger')->with('message', 'Uno de los valores no es válido, por favor llene todos los campos correctamente.');
+        }
         return redirect()->route('perfilCliente.index');
     }
 }

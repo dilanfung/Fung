@@ -47,10 +47,17 @@ class citas_admin_controller extends Controller
      */
     public function store(Request $request)
     {
-        DB::select('CALL `fungdb`.`crear_cita`("'.
-        $request->input('Fecha').' '.$request->input('Hora').'", '.
-        $request->input('Usuario').', '.
-        $request->input('Vehiculo').');');
+        try {
+            DB::select('CALL `fungdb`.`crear_cita`("'.
+                $request->input('Fecha').' '.$request->input('Hora').'", '.
+                $request->input('Usuario').', '.
+                $request->input('Vehiculo').
+            ');');
+        } catch (\Illuminate\Database\QueryException $e) {
+            return redirect()->route('CitasAdmin.index')
+                ->with('alert_type', 'danger')->with('message', 'Uno de los valores no es válido, por favor llene todos los campos correctamente.');
+        }
+        
         return redirect()->route('CitasAdmin.index');
     }
 
@@ -63,11 +70,17 @@ class citas_admin_controller extends Controller
      */
     public function update(Request $request, $id)
     {
-        DB::select('CALL `fungdb`.`modificar_cita`('.
-        $id.', '.
-        '"'.$request->input('Fecha').' '.$request->input('Hora').'", '.
-        $request->input('Usuario').', '.
-        $request->input('Vehiculo').');');
+        try {
+            DB::select('CALL `fungdb`.`modificar_cita`('.
+                $id.', '.
+                '"'.$request->input('Fecha').' '.$request->input('Hora').'", '.
+                $request->input('Usuario').', '.
+                $request->input('Vehiculo')
+            .');');
+        } catch (\Illuminate\Database\QueryException $e) {
+            return redirect()->route('CitasAdmin.index')
+                ->with('alert_type', 'danger')->with('message', 'Uno de los valores no es válido, por favor llene todos los campos correctamente.');
+        }
         return redirect()->route('CitasAdmin.index');
     }
 
@@ -83,7 +96,10 @@ class citas_admin_controller extends Controller
             DB::select('call `fungdb`.`eliminar_cita`('.$id.');');
         } catch (ModelNotFoundException $exception) {
             return back()->withError($exception->getMessage())->withInput();
-        }
+        } catch (\Illuminate\Database\QueryException $e) {
+            return redirect()->route('CitasAdmin.index')
+                ->with('alert_type', 'danger')->with('message', 'No es posible eliminar la cita.');
+        } 
         return redirect()->route('CitasAdmin.index');
     }
 }

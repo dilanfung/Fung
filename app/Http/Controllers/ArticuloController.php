@@ -19,9 +19,7 @@ class ArticuloController extends Controller
      */
     public function index(Request $request)
     {
-
         $articulos = Articulo::paginate(10);
-
         return view('articulo.index', compact('articulos'))
             ->with('i', (request()->input('page', 1) - 1) * $articulos->perPage());
     }
@@ -45,10 +43,13 @@ class ArticuloController extends Controller
      */
     public function store(Request $request)
     {
-        request()->validate(Articulo::$rules);
-
-        $articulo = Articulo::create($request->all());
-
+        try {
+            request()->validate(Articulo::$rules);
+            $articulo = Articulo::create($request->all());
+        } catch (\Illuminate\Database\QueryException $e) {
+            return redirect()->route('articulos.index')
+                ->with('alert_type', 'danger')->with('message', 'Uno de los valores no es válido, por favor llene todos los campos correctamente.');
+        }
         return redirect()->route('articulos.index')
             ->with('success', 'Articulo creado correctamente.');
     }
@@ -62,7 +63,6 @@ class ArticuloController extends Controller
     public function show($id)
     {
         $articulo = Articulo::find($id);
-
         return view('articulo.show', compact('articulo'));
     }
 
@@ -75,7 +75,6 @@ class ArticuloController extends Controller
     public function edit($id)
     {
         $articulo = Articulo::find($id);
-
         return view('articulo.edit', compact('articulo'));
     }
 
@@ -88,10 +87,13 @@ class ArticuloController extends Controller
      */
     public function update(Request $request, Articulo $articulo)
     {
-        request()->validate(Articulo::$rules);
-
-        $articulo->update($request->all());
-
+        try {
+            request()->validate(Articulo::$rules);
+            $articulo->update($request->all());
+        } catch (\Illuminate\Database\QueryException $e) {
+            return redirect()->route('articulos.index')
+                ->with('alert_type', 'danger')->with('message', 'Uno de los valores no es válido, por favor llene todos los campos correctamente.');
+        }
         return redirect()->route('articulos.index')
             ->with('success', 'Articulo acutualizado correctamente');
     }
@@ -103,8 +105,12 @@ class ArticuloController extends Controller
      */
     public function destroy($id)
     {
-        $articulo = Articulo::find($id)->delete();
-
+        try {
+            $articulo = Articulo::find($id)->delete();
+        } catch (\Illuminate\Database\QueryException $e) {
+            return redirect()->route('articulos.index')
+                ->with('alert_type', 'danger')->with('message', 'No es posible eliminar.');
+        }
         return redirect()->route('articulos.index')
             ->with('success', 'Articulo eliminado correctamente');
     }

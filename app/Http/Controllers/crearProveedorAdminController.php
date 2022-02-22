@@ -15,12 +15,14 @@ class crearProveedorAdminController extends Controller
      */
     public function index()
     {
-        //$usuario->session()->get('id'); 
-        $usuario = '2'; //test en lo que se averigua como sacar el usuario de session storage
-        //->paginate(20); //resolver lo de la paginacion
         $proveedor = DB::select('CALL `fungdb`.`mostrar_todos_proveedores`();');
         $categorias = DB::select('CALL `fungdb`.`mostrar_todas_categorias`();');
-        return view('crearProveedorAdmin', [ "proveedor" => $proveedor,"proveedor2" => $proveedor,"categorias" => $categorias,"categoria" => $categorias ]);
+        return view('crearProveedorAdmin', [ 
+            "proveedor" => $proveedor,
+            "proveedor2" => $proveedor,
+            "categorias" => $categorias,
+            "categoria" => $categorias 
+        ]);
     }
 
     /**
@@ -31,24 +33,27 @@ class crearProveedorAdminController extends Controller
      */
     public function store(Request $request)
     {
-        if ($request->has('form1')) {
-            DB::select('CALL `fungdb`.`crearProveedor`("'.
-            $request->input('Nombre').'","'.
-            $request->input('Direccion').'","'.
-            $request->input('Fecha').'","'.
-            $request->input('Cedula').'","'.
-            $request->input('Categoria').'");');
-            return redirect()->route('crearProveedorAdmin.index');
+        try {
+            if ($request->has('form1')) {
+                DB::select('CALL `fungdb`.`crearProveedor`("'.
+                    $request->input('Nombre').'","'.
+                    $request->input('Direccion').'","'.
+                    $request->input('Fecha').'","'.
+                    $request->input('Cedula').'","'.
+                    $request->input('Categoria').
+                '");');
+            }
+    
+            if ($request->has('form2')) {
+                DB::select('CALL `fungdb`.`crear_categoria_proveedor`("'.
+                    $request->input('NombreC').
+                '");');
+            }
+        } catch (\Illuminate\Database\QueryException $e) {
+            return redirect()->route('crearProveedorAdmin.index')
+                ->with('alert_type', 'danger')->with('message', 'Uno de los valores no es válido, por favor llene todos los campos correctamente.');
         }
-
-        if ($request->has('form2')) {
-            DB::select('CALL `fungdb`.`crear_categoria_proveedor`("'.
-            $request->input('NombreC').'");');
-            return redirect()->route('crearProveedorAdmin.index');
-        }
-        
-       // return redirect()->route('crearProveedorAdmin.index');
-        //return response()->json($request);
+        return redirect()->route('crearProveedorAdmin.index');
     }
 
     /**
@@ -60,14 +65,20 @@ class crearProveedorAdminController extends Controller
      */
     public function update(Request $request, $id)
     {
-        DB::select('CALL `fungdb`.`modificar_proveedor`("'.
-        $request->input('IdM').'","'.
-        $request->input('NombreM').'","'.
-        $request->input('DireccionM').'","'.
-        $request->input('FechaM').'","'.
-        $request->input('CedulaM').'");');
+        try {
+            DB::select('CALL `fungdb`.`modificar_proveedor`("'.
+                $request->input('IdM').'","'.
+                $request->input('NombreM').'","'.
+                $request->input('DireccionM').'","'.
+                $request->input('FechaM').'","'.
+                $request->input('CedulaM').
+            '");');
+        } catch (\Illuminate\Database\QueryException $e) {
+            return redirect()->route('crearProveedorAdmin.index')
+                ->with('alert_type', 'danger')->with('message', 'Uno de los valores no es válido, por favor llene todos los campos correctamente.');
+        }
+        
         return redirect()->route('crearProveedorAdmin.index');
-        //return response()->json($request);
     }
 
     /**
@@ -78,7 +89,12 @@ class crearProveedorAdminController extends Controller
      */
     public function destroy($id)
     {
-        DB::select('call `fungdb`.`eliminar_proveedor`("'.$id.'");');
+        try {
+            DB::select('call `fungdb`.`eliminar_proveedor`("'.$id.'");');
+        } catch (\Illuminate\Database\QueryException $e) {
+            return redirect()->route('crearProveedorAdmin.index')  
+                ->with('alert_type', 'danger')->with('message', 'No es posible eliminar.');
+        }
         return redirect()->route('crearProveedorAdmin.index');
     }
 }
