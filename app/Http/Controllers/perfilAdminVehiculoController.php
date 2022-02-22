@@ -38,7 +38,7 @@ class perfilAdminVehiculoController extends Controller
                 "'.$request->input('modelo').'",
                 "'.$request->input('placa').
             '");');
-            catch (\Illuminate\Database\QueryException $e) {
+        }catch (\Illuminate\Database\QueryException $e) {
                 return redirect()->route('perfilCliente.index')
                     ->with('alert_type', 'danger')->with('message', 'Uno de los valores no es válido, por favor llene todos los campos correctamente.');
             }
