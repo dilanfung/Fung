@@ -22,7 +22,7 @@ class clientesAdminController extends Controller{
             DB::select('CALL `fungdb`.`modificar_usuario_admin`('.
                 $id.', '.
                 '"'.$request->input('name').'", '.
-                '"'.$request->input('email').'", '.
+                '"'.$request->input('email').'"'.
             ');');
         } catch (\Illuminate\Database\QueryException $e) {
             return redirect()->route('clientesAdmin.index')
