@@ -57,6 +57,37 @@
 		<a href="perfilAdminVehiculo"><button class="sim-btn hvr-bounce-to-top">Ver vehículos</button></a>
 	</div>
 
+	<div class="section-title text-center">
+		<br><h3>Clientes</h3>
+		<button data-toggle="modal" data-target="#modalCliente" class="sim-btn hvr-bounce-to-top">Modificar clave</button>
+	</div>
+
+	<div id="modalCliente" class="modal modal-top fade">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<form id="add-event" method="POST" action="{{ url('/perfilAdmin2/') }}">
+					@csrf
+					<div class="modal-body">
+						<div class="form-group">
+							<label>Correo</label>
+							<input type="text" class="form-control" name="CorreoC" 
+								placeholder="Correo del cliente" required>
+						</div>
+						<div class="form-group">
+							<label>Correo</label>
+							<input type="text" class="form-control" name="ClaveC" 
+								placeholder="Clave Nueva" required>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="submit" class="btn btn-primary">Guardar</button>
+						<button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
 	<table id="" class="table table-striped table-bordered" cellspacing="0" width="100%">
 		<thead>
 			<tr>

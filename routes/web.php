@@ -15,6 +15,7 @@ Route::resource('user', 'UserController');
 Route::resource('CitasAdmin', 'citas_admin_controller')->middleware('soloadmin'); 
 Route::resource('CitasCliente', 'citas_cliente_controller')->middleware('solouser');
 Route::resource('perfilAdmin', 'perfilAdminController')->middleware('soloadmin');
+Route::resource('perfilAdmin2', 'perfilAdminController2')->middleware('soloadmin');
 Route::resource('perfilCliente', 'perfilClienteController')->middleware('solouser');
 Route::resource('perfilAdminVehiculo', 'perfilAdminVehiculoController')->middleware('soloadmin'); 
 Route::resource('perfilClienteVehiculo', 'perfilclienteVehiculoController')->middleware('solouser');
