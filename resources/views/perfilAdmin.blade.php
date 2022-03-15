@@ -74,7 +74,7 @@
 								placeholder="Correo del cliente" required>
 						</div>
 						<div class="form-group">
-							<label>Correo</label>
+							<label>ClaveNueva</label>
 							<input type="text" class="form-control" name="ClaveC" 
 								placeholder="Clave Nueva" required>
 						</div>
