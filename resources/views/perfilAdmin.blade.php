@@ -58,7 +58,7 @@
 	</div>
 
 	<div class="section-title text-center">
-		<br><h3>Clientes</h3>
+		<br><h3>Clientes(Cambio de clave)</h3>
 		<button data-toggle="modal" data-target="#modalCliente" class="sim-btn hvr-bounce-to-top">Modificar clave</button>
 	</div>
 
