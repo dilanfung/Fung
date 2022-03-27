@@ -57,7 +57,6 @@
 				<th>Nombre del Cliente</th>
 				<th>Correo</th>
 				<th>Editar</th>
-				<th>Eliminar</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -69,13 +68,6 @@
 					<td>
 						<button data-toggle="modal" data-target="#modalEditarCliente{{ $cliente->id }}" 
 						class="button--save datatable-button fa-edit"></button>
-					</td>
-					<td>
-						<form method="POST" action="{{ url('/perfilCliente2/'.$cliente->id) }}">
-							@csrf 
-							{{ @method_field('delete') }}
-							<button onclick="return confirm('¿Esta seguro que desea eliminar este vehiculo?')" class="button--delete datatable-button fa-trash"></button>
-						</form>
 					</td>
 				</tr>
 

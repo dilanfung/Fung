@@ -30,4 +30,19 @@ class clientesAdminController extends Controller{
         }
         return redirect()->route('clientesAdmin.index');
     }
+
+    public function destroy($id)
+    {
+        
+        try { 
+            DB::select('call `fungdb`.`eliminar_usuario`('.$id.');');
+        } catch (ModelNotFoundException $exception) {
+            return back()->withError($exception->getMessage())->withInput();
+        } catch (\Illuminate\Database\QueryException $e) {
+            return redirect()->route('perfilCliente.index')
+               ->with('alert_type', 'danger')->with('message', 'No es posible eliminar.');
+        }
+    
+        return redirect()->route('clientesAdmin.index');
+    } 
 }

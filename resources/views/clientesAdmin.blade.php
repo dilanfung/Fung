@@ -16,6 +16,7 @@
 				<th>Nombre del Cliente</th>
 				<th>Correo</th>
 				<th>Modificar</th>
+				<th>ELiminar</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -27,6 +28,13 @@
 					<td>
 						<button data-toggle="modal" data-target="#modalEditarCliente{{$clienteAdminItem->id}}" 
 							class="button--save datatable-button fa-edit" value="{{$clienteAdminItem->id}}"></button>
+					</td>
+					<td>
+						<form method="POST" action="{{ url('/clientesAdmin/'.$clienteAdminItem->id) }}">
+							@csrf 
+							{{ @method_field('delete') }}
+							<button onclick="return confirm('¿Esta seguro que desea eliminar este usuario?')" class="button--delete datatable-button fa-trash"></button>
+						</form>
 					</td>
 				</tr>
 			@empty
